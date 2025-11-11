@@ -188,6 +188,7 @@ parameters:  #see https://confluence.hl7.org/display/FHIR/Implementation+Guide+P
 # │ input/includes. To use a provided input/includes/menu.xml file, delete the "menu"              │
 # │ property below.                                                                                │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+menu:
   Home:
     Home (en): index.html
     Home (cs): index-cs.html
@@ -294,7 +295,16 @@ parameters:  #see https://confluence.hl7.org/display/FHIR/Implementation+Guide+P
 # is specified by id or name, SUSHI will replace it with the correct
 # URL when generating the IG JSON.
 #
-# groups:
+groups:
+  czech-logical-model:
+    name: Czech logical model (Informative)
+    description: Logical model in czech language. Informative for this version of the guide.
+    resources:
+      - StructureDefinition/LogElpCz
+      - StructureDefinition/LogHeaderElpCz
+      - StructureDefinition/LogMedicalExaminationCz
+      - StructureDefinition/LogMedicalReportCz
+      - StructureDefinition/LogResultCz
 #   GroupA:
 #     name: Group A
 #     description: The Alpha Group

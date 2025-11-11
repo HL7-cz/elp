@@ -6,8 +6,8 @@
 id: hl7.fhir.cz.elp
 canonical: https://hl7.cz/fhir/elp
 name: HL7CzELPImplementationGuide
-title: HL7 Czech Electronic medical reports Implementation Guide
-description: HL7 Czech Electronic medical reports Implementation Guide
+title: HL7 Czech Electronic medical report Implementation Guide
+description: HL7 Czech Electronic medical report Implementation Guide
 status: draft # draft | active | retired | unknown
 version: 0.0.1
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html

@@ -3,11 +3,11 @@
 # │  used properties are included. For a list of all supported properties and their functions,     │
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: hl7.fhir.cz.empty
-canonical: https://hl7.cz/fhir/empty #!!change here!!
-name: HL7CzEmptyImplementationGuide
-title: HL7 Czech Empty Implementation Guide
-description: HL7 Czech Empty Implementation Guide
+id: hl7.fhir.cz.elp
+canonical: https://hl7.cz/fhir/elp
+name: HL7CzELPImplementationGuide
+title: HL7 Czech Electronic medical reports Implementation Guide
+description: HL7 Czech Electronic medical reports Implementation Guide
 status: draft # draft | active | retired | unknown
 version: 0.0.1
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html

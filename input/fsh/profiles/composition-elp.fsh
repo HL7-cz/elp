@@ -49,8 +49,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
 
 * section contains
     medicalExamination 1..1 and
-    medicalReport 1..1 and
-    result 1..1
+    medicalReport 1..1
 
 ///////////////////////////////// MEDICAL EXAMINATION SECTION ///////////////////////////////////////
 * section[medicalExamination]
@@ -61,7 +60,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * entry
     * ^short = "Medical Examination"
     * ^definition = "This entry holds information about medical examination (appointment) that is associated with this Composition."
-//  * entry only Reference(CZ_AppointmentELP)
+  * entry only Reference(CZ_AppointmentElp or CZ_ObservationExaminationElp)
   * author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
 
 ///////////////////////////////// MEDICAL REPORT SECTION ///////////////////////////////////////
@@ -73,21 +72,8 @@ Description: "This profile defines how to represent Composition resource in HL7 
   * entry
     * ^short = "Medical Report"
     * ^definition = "This entry holds a reference to the diagnostic report that is associated with this Composition."
-//  * entry only Reference(CZ_DiagnosticReportELP)
+  * entry only Reference(CZ_DiagnosticReportElp)
   * author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
-
-///////////////////////////////// RESULT SECTION ///////////////////////////////////////
-* section[result]
-  * ^short = "Result Section"
-  * ^definition = "This section holds information about result of the driver license medical fitness certificate."
-  * code = $loinc#29545-1 //"Physical findings note"
-  * entry 0..*
-  * entry
-    * ^short = "Results"
-    * ^definition = "This entry holds a reference to the Imaging Study instance that is associated with this Composition."
-//  * entry only Reference(CZ_ObservationELP)
-  * author only Reference(CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_PatientCore or CZ_RelatedPersonCore or CZ_OrganizationCore)
-
 
 Invariant: text-or-section
 Description: "A Composition SHALL have either text, at least one section, or both."

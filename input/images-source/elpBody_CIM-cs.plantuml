@@ -1,0 +1,14 @@
+@startmindmap
+* Obsah dokumentu
+** Lékařská prohlídka
+*** Druh prohlídky
+*** Datum vystavení
+** Lékařský posudek
+*** Druh posudku
+*** Datum platnosti
+*** Datum vystavení
+** Výsledek
+*** Zdravotní způsobilost
+*** Omezení
+*** Zdůvodnění
+@endmindmap

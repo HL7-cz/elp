@@ -14,6 +14,7 @@ his guide is divided into several pages, which are listed in the menu bar at the
   - [Background](background.html): This section provides general information on the origins of the definition of the Electronic medical reports. 
 - Functional: 
   - [Use Cases](use-cases.html): This section contains information about use cases. 
+  - [Workflow](workflow.html): This segment contains information about workflow. 
   - [Logical Models](logical-models.html): This section contains information about logical models.  
 - Implementation: 
   - [Mapping to profiles](model-map.html): This section contains information on mapping the logical model to the Electronic medical report profiles. 

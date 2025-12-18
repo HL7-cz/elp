@@ -6,9 +6,9 @@ Cílem procesu z hlediska MZ ČR je vystavit platný a validní elektronický l�
 Cílem procesu z hlediska třetích stran, zejména MD ČR, a dále také PČR nebo ORP prostřednictvím MD ČR, je získat informaci o způsobilosti osoby k vedení motorového vozidla prostřednictvím lékařského posudku pro ŘO pro konkrétní osobu – řidiče.
 1. Proces začíná žádosti pacienta - řidiče, který potřebuje lékařský posudek pro specifický účel – v tomto případě ŘO.
 2. Posuzující lékař provede zdravotní prohlídku, vyšetření a hodnocení pacienta.
-  1. V rámci prohlídky posuzující lékař provede potřebná fyzická a laboratorní vyšetření (např. zraková ostrost a reakční schopnosti). 
+- V rámci prohlídky posuzující lékař provede potřebná fyzická a laboratorní vyšetření (např. zraková ostrost a reakční schopnosti). 
 3. Po vyhodnocení výsledků posuzující lékař v systému vybere typ lékařského posudku a systém načte a otevře šablonu pro vytvoření lékařského posudku – v tomto případě pro ŘO. 
-  1. Posuzující lékař vyplní povinné údaje dle stanovené struktury lékařského posudku. 
+- Posuzující lékař vyplní povinné údaje dle stanovené struktury lékařského posudku. 
 4. Výsledky vyšetření jsou tak zaznamenány do systému, včetně informace o zdravotní způsobilosti pacienta (na základě vyhlášky o zdravotní způsobilosti k řízení motorových vozidel).
 5. Systém uloží posudek a přiřadí mu jedinečný identifikátor, který slouží k jeho archivaci.
 6. Takto uložený posudek je k dispozici pacientovi (prostřednictvím aplikace EZKarta nebo portálu NPEZ) a dalším oprávněným institucím (prostřednictvím ISSS).
@@ -19,7 +19,7 @@ Fungování systému ELP vyžaduje jasně definované organizační odpovědnost
 
 ##### Správa systému ELP
 
-**Ministerstvo zdravotnictví (MZDd):**
+**Ministerstvo zdravotnictví (MZČR):**
 - gestor celého systému ELP,
 - stanovuje legislativní a metodické rámce,
 - garantuje soulad s právními předpisy a bezpečnostními standardy.
@@ -31,7 +31,7 @@ Fungování systému ELP vyžaduje jasně definované organizační odpovědnost
 **EZCA (resortní certifikační autorita):**
 - vydává certifikáty pro autentizaci a autorizaci systémů a uživatelů.
 
-**MV ČR (Ministerstvo vnitra) – ISSS:**
+**MVČR (Ministerstvo vnitra) – ISSS:**
 - zajišťuje bezpečné napojení institucí veřejné správy (např. ČSSZ, Policie ČR, Ministerstvo dopravy ČR) na systém ELP
 
 #### Zapisující osoby
@@ -64,17 +64,17 @@ Fungování systému ELP vyžaduje jasně definované organizační odpovědnost
 
 #### Popis případu užití
 
-1. Vystavení lékařského posudku
+1. **Vystavení lékařského posudku**
 - Aktér: Posuzující lékař
 - Popis: Lékař na základě vyšetření vystavuje elektronický lékařský posudek, který je uložen ve formátu XML (strukturovaná data).
 - Výstup: Posudek je uložen do systému MZ ČR a zpřístupněn oprávněným a autorizovaným subjektům přes ISSS.
 
-2. Revize, aktualizace nebo zneplatnění posudku
+2. **Revize, aktualizace nebo zneplatnění posudku**
 - Aktér: Posuzující lékař
 - Popis: V případě zjištěné změny zdravotního stavu nebo chyby v posudku je původní posudek zneplatněn a vydán nový.
 - Výstup: Starý posudek je označen jako neplatný, nový nahrazuje původní. Zároveň je zaslána notifikace o aktualizaci, resp. změně posudku.
 
-3. Získaní posudku třetí stranou
+3. **Získaní posudku třetí stranou**
 - Aktér: Instituce veřejné správy (Ministerstvo dopravy ČR)
 - Popis: Ministerstvo dopravy ČR si může stáhnout platný posudek prostřednictvím ISSS, uložit jej do CRŘ a zpřístupnit dalším oprávněným institucím.
 - Výstup: Stažení platného posudku.

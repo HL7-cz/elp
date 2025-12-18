@@ -79,6 +79,10 @@ pages:
     title: Use cases
   use-cases-cs.md:
     title: Případy užití
+  workflow.md:
+    title: Workflow
+  workflow-cs.md:
+    title: Workflow
   examples.md:
     title: Examples
   examples-cs.md:
@@ -113,6 +117,12 @@ pages:
     title: Implementation notes
   implementation-notes-cs.md:
     title: Poznámky k implementaci
+# === MAP ====
+#  Header-map.html:
+#    title: Header Model map
+#  Header-map-cs.html:
+#    title: Mapování logického modelu hlavičky
+
 # general-guidance.md:
 #   title: General Guidance
 # identifiers.md:
@@ -203,6 +213,8 @@ menu:
   Functional:
     Use cases (en): use-cases.html
     Use cases (cs): use-cases-cs.html
+    Workflow (en): workflow.html
+    Workflow (cs): workflow-cs.html
     Logical models (en): logical-models.html
     Logical models (cs): logical-models-cs.html
   Implementation:

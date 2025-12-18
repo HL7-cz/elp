@@ -1,25 +1,25 @@
 ### Elektronický lékařský posudek
 
 **Vystavení:**
-1.	Žádost pacienta – pacient vyžaduje posudek pro konkrétní účel (zaměstnání, řidičský průkaz, sociální dávky).
-2.	Posouzení zdravotního stavu – lékař provede vyšetření a vyhodnotí zdravotní způsobilost.
-3.	Vyplnění šablony ELP – v informačním systémuIS PZS (NIS/KIS) nebo přímo v centrálním systému ELP.
-4.	Elektronické podepsání – posudek ELP je opatřen podpisem/pečetí a časovým razítkem.
-5.	Uložení do centrálního úložiště ELP  – posudek ELP získá jedinečný identifikátor a stav Platný.
-6.	Zpřístupnění pacientovi – prostřednictvím portálu NPEZ nebo aplikace EZKarta.
+1. Žádost pacienta – pacient vyžaduje posudek pro konkrétní účel (zaměstnání, řidičský průkaz, sociální dávky).
+2. Posouzení zdravotního stavu – lékař provede vyšetření a vyhodnotí zdravotní způsobilost.
+3. Vyplnění šablony ELP – v informačním systémuIS PZS (NIS/KIS) nebo přímo v centrálním systému ELP.
+4. Elektronické podepsání – posudek ELP je opatřen podpisem/pečetí a časovým razítkem.
+5. Uložení do centrálního úložiště ELP  – posudek ELP získá jedinečný identifikátor a stav Platný.
+6. Zpřístupnění pacientovi – prostřednictvím portálu NPEZ nebo aplikace EZKarta.
 
 **Aktualizace:**
-1.	Zjištění změny – např. nové vyšetření, zhoršení zdravotního stavu, odvolání nebo přezkum posudku.
-2.	Revize posudku – posuzující lékař vytvoří novou verzi ELP.
-3.	Stav původního posudku – automaticky se změní na Zneplatněný.
-4.	Nový posudek – získá stav Platný a je uložen do centrálního systému ELP.
+1. Zjištění změny – např. nové vyšetření, zhoršení zdravotního stavu, odvolání nebo přezkum posudku.
+2. Revize posudku – posuzující lékař vytvoří novou verzi ELP.
+3. Stav původního posudku – automaticky se změní na Zneplatněný.
+4. Nový posudek – získá stav Platný a je uložen do centrálního systému ELP.
 
 **Zneplatnění:**
 - Na žádost lékaře nebo pacienta (pokud je posudek vydán chybně nebo byl přezkoumán).
 - Automaticky – pokud vyprší doba platnosti uvedená v posudku.
 - Na základě nového posudku – vydání nového dokumentu mění stav předchozího na neplatný.
 
-Systém ELP vždy uchovává historii posudků – neplatné posudky jsou nedostupné pro aktivní použití, ale zůstávají dohledatelné pro auditní účely.
+> Systém ELP vždy uchovává historii posudků – neplatné posudky jsou nedostupné pro aktivní použití, ale zůstávají dohledatelné pro auditní účely.
 
 **Zpřístupnění:**
 - Pacient – má přístup k platným i historickým posudkům prostřednictvím NPEZ a EZKarta.
@@ -34,7 +34,7 @@ Systém ELP vždy uchovává historii posudků – neplatné posudky jsou nedost
 
 ### Přehled životního cyklu lékařského posudku
 
-#### Životní cyklus zahrnuje tyto hlavní fáze:
+**Životní cyklus zahrnuje tyto hlavní fáze:**
 
 1. **Vytvoření žádosti**
 - Spouštěcí událost: Pacient nebo instituce (např. zaměstnavatel, úřad práce, dopravní úřad) vyžaduje posudek.

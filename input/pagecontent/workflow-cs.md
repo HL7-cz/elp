@@ -3,10 +3,10 @@
 **Vystavení:**
 1. Žádost pacienta – pacient vyžaduje posudek pro konkrétní účel (zaměstnání, řidičský průkaz, sociální dávky).
 2. Posouzení zdravotního stavu – lékař provede vyšetření a vyhodnotí zdravotní způsobilost.
-3. Vyplnění šablony ELP – v informačním systémuIS PZS (NIS/KIS) nebo přímo v centrálním systému ELP.
+3. Vyplnění šablony ELP – v informačním systému (IS) Poskytovatele zdravotních služeb (NIS/KIS) nebo přímo v centrálním systému ELP.
 4. Elektronické podepsání – posudek ELP je opatřen podpisem/pečetí a časovým razítkem.
 5. Uložení do centrálního úložiště ELP  – posudek ELP získá jedinečný identifikátor a stav Platný.
-6. Zpřístupnění pacientovi – prostřednictvím portálu NPEZ nebo aplikace EZKarta.
+6. Zpřístupnění pacientovi – prostřednictvím Národního portálu elektronického zdravotnictví nebo aplikace EZKarta.
 
 **Aktualizace:**
 1. Zjištění změny – např. nové vyšetření, zhoršení zdravotního stavu, odvolání nebo přezkum posudku.
@@ -22,9 +22,9 @@
 > Systém ELP vždy uchovává historii posudků – neplatné posudky jsou nedostupné pro aktivní použití, ale zůstávají dohledatelné pro auditní účely.
 
 **Zpřístupnění:**
-- Pacient – má přístup k platným i historickým posudkům prostřednictvím NPEZ a EZKarta.
+- Pacient – má přístup k platným i historickým posudkům prostřednictvím Národního portálu elektronického zdravotnictví a EZKarta.
 - PZS – přístup k posudkům dle oprávnění a kontextu péče.
-- Instituce veřejné správy – např. Policie ČR, ČSSZ, Ministerstvo dopravy – přístup prostřednictvím ISSS, výhradně k posudkům relevantním pro jejich agendu.
+- Instituce veřejné správy – např. Policie ČR, Česká správa sociálního zabezpečení, Ministerstvo dopravy – přístup prostřednictvím Informačního systému sdílené služby, výhradně k posudkům relevantním pro jejich agendu.
 - Zástupci pacienta – přístup umožněn prostřednictvím Registru práv a oprávnění (RO), na základě souhlasu nebo zákonného zastoupení.
 
 **Audit a dohledatelnost:**
@@ -38,7 +38,7 @@
 
 1. **Vytvoření žádosti**
 - Spouštěcí událost: Pacient nebo instituce (např. zaměstnavatel, úřad práce, dopravní úřad) vyžaduje posudek.
-- Zodpovědná osoba: Posuzující lékař v rámci PZS.
+- Zodpovědná osoba: Posuzující lékař v rámci Poskytovatele zdravotních služeb (PZS).
 - Technický krok: V systému IS PZS se vytvoří záznam o žádosti a otevře se šablona posudku dle účelu (pracovnělékařský, řidičský, zbrojní průkaz apod.).
 2. **Vystavení posudku**
 - Spouštěcí událost: Lékař po vyšetření vyhodnotí zdravotní způsobilost.
@@ -53,13 +53,13 @@
 - Technický krok:
   - Uložení do centrálního úložiště ELP.
   - Zápis do žurnálu činností (kdo a kdy posudek vytvořil).
-  - Notifikace pacientovi (NPEZ, EZKarta).
+  - Notifikace pacientovi (Národní portál elektronického zdravotnictví, EZKarta).
 4. **Zpřístupnění posudku**
 - Spouštěcí událost: Pacient nebo instituce potřebuje nahlédnout na posudek.
 - Oprávněné subjekty:
-  - Pacient (v NPEZ / EZKarta).
+  - Pacient (v Národním portálu elektronického zdravotnictví / EZKarta).
   - PZS a zdravotničtí pracovníci (v rámci kontextu péče).
-  - Instituce veřejné správy (např. ČSSZ, MD ČR, Policie ČR) přes ISSS.
+  - Instituce veřejné správy (např. Česká správa sociálního zabezpečení, Ministerstvo dopravy ČR, Policie ČR) přes Informační systém sdílené služby.
 - Technický krok: Autentizace a autorizace, výdej posudku ve formátu JSON/XML dle oprávnění.
 5. **Aktualizace posudku**
 - Spouštěcí událost: Nové vyšetření, přezkoumání nebo oprava údajů.

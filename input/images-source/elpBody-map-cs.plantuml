@@ -1,0 +1,50 @@
+@startuml
+hide circle
+hide stereotype
+hide members
+hide methods
+skinparam linetype ortho
+skinparam class {
+BackgroundColor<<LogicalModel>> #APPLICATION
+BackgroundColor<<Profile>> #TECHNOLOGY
+}
+legend right
+| <#APPLICATION>  Logický model |
+| <#TECHNOLOGY>  Profil |
+endlegend
+
+class "ELP - Lékařská prohlídka" <<LogicalModel>> [[StructureDefinition-LogMedicalExaminationCz.html]]
+note top #EEEEAE [[ConceptMap-MedicalExamination2FHIR-cz.html]]
+Concept Mapa
+endnote
+
+class "ELP - Výsledek posudku" <<LogicalModel>> [[StructureDefinition-LogResultCz.html]]
+note top #EEEEAE [[ConceptMap-Result2FHIR-cz.html]]
+Concept Mapa
+endnote
+
+class "ELP - Lékařský posudek" <<LogicalModel>> [[StructureDefinition-LogMedicalReportCz.html]]
+note top #EEEEAE [[ConceptMap-MedicalReport2FHIR-cz.html]]
+Concept Mapa
+endnote
+
+class "cz-composition-elp" <<Profile>> [[StructureDefinition-cz-composition-elp.html]]
+class "cz-appointment-elp" <<Profile>> [[StructureDefinition-cz-appointment-elp.html]]
+class "cz-observation-examination-elp" <<Profile>> [[StructureDefinition-cz-observation-examination-elp.html]]
+class "cz-diagnostic-report-elp" <<Profile>> [[StructureDefinition-cz-diagnostic-report-elp.html]]
+
+"ELP - Lékařská prohlídka" <|. "cz-composition-elp"
+"ELP - Lékařská prohlídka" <|. "cz-appointment-elp"
+"ELP - Lékařská prohlídka" <|. "cz-observation-examination-elp"
+
+"ELP - Lékařský posudek" <|. "cz-composition-elp"
+"ELP - Lékařský posudek" <|. "cz-diagnostic-report-elp"
+
+"ELP - Výsledek posudku" <|. "cz-composition-elp"
+"ELP - Výsledek posudku" <|. "cz-diagnostic-report-elp"
+
+"cz-composition-elp" -d[hidden]-> "cz-appointment-elp"
+"cz-appointment-elp" -d[hidden]-> "cz-observation-examination-elp"
+"cz-observation-examination-elp" -d[hidden]-> "cz-diagnostic-report-elp"
+
+@enduml

@@ -113,6 +113,14 @@ pages:
     title: Download
   downloads-cs.md:
     title: Download
+# === MAP ====
+#  Header-map.html:
+#    title: Header Model map
+  elpHeader-map-cs.html:
+    title: Mapování logického modelu hlavičky
+  elpBody-map-cs.html:
+    title: Mapování logického modelu Elektronického lékařského posudku
+    
 # general-guidance.md:
 #   title: General Guidance
 # identifiers.md:

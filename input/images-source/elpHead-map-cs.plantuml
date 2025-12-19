@@ -1,0 +1,34 @@
+@startuml
+hide circle
+hide stereotype
+hide members
+hide methods
+skinparam linetype ortho
+skinparam class {
+BackgroundColor<<LogicalModel>> #APPLICATION
+BackgroundColor<<Profile>> #TECHNOLOGY
+}
+legend right
+| <#APPLICATION>  Logický model |
+| <#TECHNOLOGY>  Profil |
+endlegend
+class "Hlavička elektronického lékařského posudku" <<LogicalModel>> [[StructureDefinition-LogHeaderElpCz.html]]
+note top #EEEEAE [[ConceptMap-Header2FHIR-cz.html]]
+Concept Mapa
+endnote
+
+class "cz-patient-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-patient-core.html]]
+class "cz-practitionerrole-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-practitionerrole-core.html]]
+class "cz-bundle-elp" <<Profile>> [[StructureDefinition-cz-bundle-elp.html]]
+class "cz-composition-elp" <<Profile>> [[StructureDefinition-cz-composition-elp.html]]
+
+"Hlavička elektronického lékařského posudku" <|. "cz-composition-elp"
+"Hlavička elektronického lékařského posudku" <|. "cz-bundle-elp"
+"Hlavička elektronického lékařského posudku" <|. "cz-patient-core"
+"Hlavička elektronického lékařského posudku" <|. "cz-practitionerrole-core"
+
+"cz-bundle-elp" -d[hidden]-> "cz-composition-elp"
+"cz-composition-elp" -d[hidden]-> "cz-patient-core"
+"cz-patient-core" -d[hidden]-> "cz-practitionerrole-core"
+
+@enduml

@@ -26,7 +26,7 @@ Vydávání lékařských posudků v České republice je upraveno několika pr�
     - Stanovuje podmínky zdravotní způsobilosti a postupy při vydávání posudků k řízení motorových vozidel.
 - [Zákon č. 119/2002 Sb.](https://www.e-sbirka.cz/sb/2002/119/2025-07-01), o střelných zbraních a střelivu (od 1.1.2026 [Zákon č. 90/2024 Sb.](https://www.e-sbirka.cz/sb/2024/90/2026-01-01))
   - **Způsobilost pro držení zbrojního průkazu**.
-  - [Vyhláška č. 493/2002 Sb.](https://www.e-sbirka.cz/sb/2002/493/2007-12-01) (zrušeno 1.1.2026), o posuzování zdravotní způsobilosti k vydání nebo platnosti zbrojního průkazu a o obsahu lékárničky první pomoci provozovatele střelnice
+  - [Vyhláška č. 493/2002 Sb.](https://www.e-sbirka.cz/sb/2002/493/2007-12-01) (zrušeno 1.1.2026 a nahrazuje znění [Zákon č. 90/2024 Sb.](https://www.e-sbirka.cz/sb/2024/90/2026-01-01)), o posuzování zdravotní způsobilosti k vydání nebo platnosti zbrojního průkazu a o obsahu lékárničky první pomoci provozovatele střelnice
     - Specifikuje zdravotní požadavky pro držení zbrojního průkazu.
 - [Zákon č. 99/1963 Sb.](https://www.e-sbirka.cz/sb/1963/99/2025-10-01), občanský soudní řád nebo [zákon č. 141/1961 Sb.](https://www.e-sbirka.cz/sb/1961/141/2025-07-01), trestní řád, a další specifické zákony související se soudním řízením.
   - **Lékařské posudky pro soudní řízení** – pro posouzení zdravotního stavu pro účely opatrovnictví, adopci, pěstounskou péči, pracovních sporů, trestního řízení apod.
@@ -57,11 +57,11 @@ Vydávání lékařských posudků v České republice je upraveno několika pr�
 
 ##### Zdravotní způsobilost pro žádost o ŘO a jeho vystavení (včetně rozšíření ŘO) – NEDIGITALIZOVANÝ PROCES
 
-Zajištění posouzení zdravotní způsobilosti žadatelů o ŘO před zahájením výuky a výcviku v autoškole. Tato situace se aplikuje v okamžiku, kdy žadatel podává žádost o vydání ŘO a musí doložit, že je zdravotně způsobilý k řízení motorového vozidla (§ 82 odst. 1 písm. b), § 84 odst. 2 zákona o silničním provozu, § 13 odst. 1 písm. d) a odst. 4 [zákona č. 247/2000 Sb.)](https://www.e-sbirka.cz/sb/2000/247/2025-07-01)).
+Zajištění posouzení zdravotní způsobilosti žadatelů o Řidičského oprávnění (ŘO) před zahájením výuky a výcviku v autoškole. Tato situace se aplikuje v okamžiku, kdy žadatel podává žádost o vydání ŘO a musí doložit, že je zdravotně způsobilý k řízení motorového vozidla (§ 82 odst. 1 písm. b), § 84 odst. 2 zákona o silničním provozu, § 13 odst. 1 písm. d) a odst. 4 [zákona č. 247/2000 Sb.)](https://www.e-sbirka.cz/sb/2000/247/2025-07-01)).
 
 **Příjemce dat:**
-- Ministerstvo dopravy ČR prostřednictvím ISSS.
-- ORP/Autoškoly (pro validaci zdravotní způsobilosti žadatelů) prostřednictvím Ministerstva dopravy ČR – CRŘ.
+- Ministerstvo dopravy ČR prostřednictvím Informačního systému sdílené služby .
+- ORP/Autoškoly (pro validaci zdravotní způsobilosti žadatelů) prostřednictvím Ministerstva dopravy ČR – Centrální registr řidičů (CRŘ).
 
 **Data, která budou použita:**
 - Lékařský posudek (XML struktura). 
@@ -84,8 +84,8 @@ Zajištění posouzení zdravotní způsobilosti žadatelů o ŘO před zahájen
 Pravidelné posouzení zdravotní způsobilosti pro řidiče ve věku nad 70 let, kteří jsou povinni podstupovat pravidelné lékařské prohlídky, aby mohli pokračovat v řízení motorových vozidel.
 
 **Příjemce dat:**
-- Ministerstvo dopravy ČR prostřednictvím ISSS.
-- Policie ČR prostřednictvím Ministerstva dopravy ČR - CRŘ (pro ověření, zda má řidič aktuální zdravotní posudek). 
+- Ministerstvo dopravy ČR prostřednictvím Informačního systému sdílené služby .
+- Policie ČR prostřednictvím Ministerstva dopravy ČR - Centrální registr řidičů (pro ověření, zda má řidič aktuální zdravotní posudek). 
 
 **Data, která budou použita:**
 - Lékařský posudek (XML struktura pro aktualizaci zdravotní způsobilosti). V případě aktualizace dojde k nahrání nového/aktualizovaného lékařského posudku.
@@ -93,7 +93,7 @@ Pravidelné posouzení zdravotní způsobilosti pro řidiče ve věku nad 70 let
 
 **Procesy:**
 - Předávání dat: Lékař vystaví nový posudek, který bude záznamem pro pokračování v řízení motorového vozidla – uložení do systému MZ ČR. 
-- Validace: MD kontroluje aktuálnost/platnost posudku (doptá se, zda existuje platný posudek v systému MZ ČR přes ISSS) a vkládá do CRŘ. Policie ČR se při silniční kontrole doptává online do CRŘ. 
+- Validace: MD kontroluje aktuálnost/platnost posudku (doptá se, zda existuje platný posudek v systému MZ ČR přes Informační systém sdílené služby) a vkládá do Centrálního registru řidičů (CRŘ). Policie ČR se při silniční kontrole doptává online do CRŘ. 
 - Rozhodnutí: Na základě validace zdravotní způsobilosti Policie ČR zhodnotí situaci. 
 
 <div>
@@ -111,8 +111,8 @@ Pravidelné posouzení zdravotní způsobilosti pro řidiče ve věku nad 70 let
 Posouzení zdravotní způsobilosti pro řidiče, kteří mají specifické podmínky pro řízení, např. postižení nebo omezenou pohyblivost, což vyžaduje specifické úpravy pro řízení motorového vozidla.
 
 **Příjemce dat:**
-- Ministerstvo dopravy ČR prostřednictvím ISSS.
-- Autoškoly (pro přijímání žadatelů se speciálními potřebami) prostřednictvím Ministerstva dopravy ČR – CRŘ.
+- Ministerstvo dopravy ČR prostřednictvím Informačního systému sdílené služby .
+- Autoškoly (pro přijímání žadatelů se speciálními potřebami) prostřednictvím Ministerstva dopravy ČR – Centrální registr řidičů (CRŘ).
 - ORP/Policie ČR (pro kontrolu způsobilosti) prostřednictvím Ministerstva dopravy ČR - CRŘ. 
 
 **Data, která budou použita:**
@@ -121,8 +121,8 @@ Posouzení zdravotní způsobilosti pro řidiče, kteří mají specifické podm
 
 **Procesy:**
 - Předávání dat: Lékař vystaví posudek se specifickými podmínkami pro řízení. 
-- Rozhodnutí o přizpůsobení vozidla: MD a autoškola zpracují data a zajistí, že žadatel bude moci řídit vozidlo přizpůsobené jeho zdravotnímu stavu. 
-- Validace: MD kontroluje aktuálnost/platnost posudku (doptá se, zda existuje platný posudek v systému MZ ČR přes ISSS) a předává data Policii ČR. 
+- Rozhodnutí o přizpůsobení vozidla: Ministerstvo dopravy ČR a autoškola zpracují data a zajistí, že žadatel bude moci řídit vozidlo přizpůsobené jeho zdravotnímu stavu. 
+- Validace: Ministerstvo dopravy ČR kontroluje aktuálnost/platnost posudku (doptá se, zda existuje platný posudek v systému Ministerstva zdravotnictví ČR přes Informační systém sdílené služby) a předává data Policii ČR. 
 
 <div>
 <img src="img-sit_zpusobilost-spec_cz.png" class="figure-img img-responsive img-rounded center-block" width="70%">
@@ -137,15 +137,15 @@ Posouzení zdravotní způsobilosti pro řidiče, kteří mají specifické podm
 Informování o změně zdravotní způsobilosti příslušného pacienta – řidiče, a to prostřednictvím aktualizovaného lékařského posudku.
 
 **Příjemce dat:**
-- Ministerstvo dopravy ČR prostřednictvím ISSS.
-- ORP/Policie ČR (pro kontrolu způsobilosti) prostřednictvím Ministerstva dopravy ČR - CRŘ.
+- Ministerstvo dopravy ČR prostřednictvím Informačního systému sdílené služby .
+- ORP/Policie ČR (pro kontrolu způsobilosti) prostřednictvím Ministerstva dopravy ČR - Centrální registr řidičů.
 
 **Data, která budou použita:**
 - Aktualizovaný lékařský posudek (XML pro strukturované informace o zdravotních omezeních).
 
 **Procesy:**
 - Předávání dat: Lékař vystaví aktualizovaný lékařský posudek. Systém MZ ČR zašle notifikaci o aktualizaci lékařského posudku příslušného pacienta – řidiče.
-- Validace: MD stahuje na základě notifikace  aktualizovaný posudek a vkládá do CRŘ.
+- Validace: MD stahuje na základě notifikace  aktualizovaný posudek a vkládá do Centrálního registru řidičů.
 - Rozhodnutí: Na základě validace zdravotní způsobilosti ORP zhodnotí situaci.  
 
 <div>

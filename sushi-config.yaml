@@ -132,20 +132,16 @@ pages:
 # https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
 #
 parameters:  #see https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
-#  special-url:
-#    - https://ncez.mzcr.cz/fhir/ValueSet/cz-administrative-gender-vs
-#    - https://ncez.mzcr.cz/fhir/ValueSet/cz-contact-person-relation-vs
-#    - https://ncez.mzcr.cz/fhir/CodeSystem/cz-drzar
-#    - https://ncez.mzcr.cz/fhir/CodeSystem/nrzp-povolani
-#    - https://ncez.mzcr.cz/fhir/ValueSet/cz-drzar-vs
-#    - https://ncez.mzcr.cz/fhir/ValueSet/nrzp-povolani-vs
-#    - https://ncez.mzcr.cz/fhir/ValueSet/PassportNS-vs
-#    - https://ncez.mzcr.cz/fhir/CodeSystem/cz-tab-ta
-#    - https://ncez.mzcr.cz/fhir/ValueSet/typ-registrujiciho-lekare-vs
-#    - https://ncez.mzcr.cz/fhir/CodeSystem/role-code-supplement
-#    - https://ncez.mzcr.cz/fhir/CodeSystem/contact-role-supplement
-#    - https://ncez.mzcr.cz/fhir/CodeSystem/snomed-supplement-service-type
-#    - http://ncez.mzcr.cz/fhir/StructureDefinition/address-point-cz
+  special-url:
+    - https://ncez.mzcr.cz/terminology/CodeSystem/elp-ro
+    - https://ncez.mzcr.cz/terminology/ValueSet/elp-ro-druh-prohlidky
+    - https://ncez.mzcr.cz/terminology/ValueSet/elp-ro-seznam-skupin
+    - https://ncez.mzcr.cz/terminology/ValueSet/elp-ro-zadatel-skupina
+    - https://ncez.mzcr.cz/terminology/ValueSet/elp-ro-druh-posudku
+    - https://ncez.mzcr.cz/terminology/ValueSet/elp-ro-vysledek-posudku
+    - https://ncez.mzcr.cz/terminology/ValueSet/elp-ro-odbornost
+    - https://ncez.mzcr.cz/terminology/ValueSet/elp-ro-narodni-kody
+    - https://ncez.mzcr.cz/terminology/ValueSet/elp-ro-harmonizovane-kody
 # path-resource:
 #    - input/resources
 #    - fsh-generated/resources

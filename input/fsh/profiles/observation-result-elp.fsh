@@ -29,4 +29,6 @@ Description: "Appointment used to represent an observation of medical report for
   * code = CZ_RestrictionTypeELPCS#3 "Upřesnění omezení"
   * valueCodeableConcept from CZ_RestrictionClarificationELPVS (required)
 
+* valueCodeableConcept from CZ_VehicleELPVS
+
 * effectiveDateTime 1..1

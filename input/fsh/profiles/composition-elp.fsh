@@ -19,9 +19,6 @@ Description: "This profile defines how to represent Composition resource in HL7 
 * subject 1..1
 * subject ^definition = "Who or what the composition is about. \r\nIn general a composition can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of livestock, or a set of patients that share a common exposure).\r\nFor the hdr the subject is always the patient."
 
-* encounter only Reference (CZ_Encounter)
-* encounter 1..1 
-
 * date ^short = "ELP date"
 * author ^short = "Who and/or what authored the Electronic Medical Report"
 * author ^definition = "Identifies who is responsible for the information in the Electronic Medical Report."
@@ -67,7 +64,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
 * section[medicalReport]
   * ^short = "Medical Report Section"
   * ^definition = "This section holds information about medical report."
-  //* code = $loinc# //""
+  * code = $loinc#104988-1 //"Medical fitness certificate"
   * entry 0..*
   * entry
     * ^short = "Medical Report"

@@ -17,12 +17,7 @@ Usage: #definition
 * group[=].target = "https://hl7.cz/fhir/elp/StructureDefinition/cz-diagnostic-report-elp"
 * group[=].element[+].code = #MedicalReportCz.typeOfAssessment				
 * group[=].element[=].display = "A.2.2.1 - Type of assessment"					
-* group[=].element[=].target.code = #CZ_DiagnosticReportElp.category.coding:driverStatus				
-* group[=].element[=].target.display = ""					
-* group[=].element[=].target.equivalence = #equivalent
-* group[=].element[+].code = #MedicalReportCz.drivingLicenseGroup				
-* group[=].element[=].display = "A.2.2.2 - Driving license group"					
-* group[=].element[=].target.code = #CZ_DiagnosticReportElp.category.coding:vehicleType				
+* group[=].element[=].target.code = #CZ_DiagnosticReportElp.category				
 * group[=].element[=].target.display = ""					
 * group[=].element[=].target.equivalence = #equivalent
 * group[=].element[+].code = #MedicalReportCz.dateValidUntil				
@@ -36,7 +31,12 @@ Usage: #definition
 * group[=].element[=].target.display = ""					
 * group[=].element[=].target.equivalence = #equivalent
 * group[+].source = "https://hl7.cz/fhir/elp/StructureDefinition/MedicalReportCz"
-* group[=].target = "https://hl7.cz/fhir/elp/StructureDefinition/cz-diagnostic-report-elp"
+* group[=].target = "https://hl7.cz/fhir/elp/StructureDefinition/cz-observation-result-elp"
+* group[=].element[+].code = #MedicalReportCz.drivingLicenseGroup				
+* group[=].element[=].display = "A.2.2.2 - Driving license group"					
+* group[=].element[=].target.code = #CZ_DiagnosticReportElp.valueCodeableConcept				
+* group[=].element[=].target.display = ""					
+* group[=].element[=].target.equivalence = #equivalent
 * group[=].element[+].code = #MedicalReportCz.dateOfIssueOfAssessment				
 * group[=].element[=].display = "A.2.2.4 - Date of issue of assessment"					
 * group[=].element[=].target.code = #CZ_ObservationResultElp.effectiveDateTime				

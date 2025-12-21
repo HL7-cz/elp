@@ -1,7 +1,7 @@
-ValueSet: CZ_CategoryByVehicleELPVS
-Id: cz-category-by-vehicle-elp-vs
-Title: "Category by vehicle value set"
-Description: "Category by vehicle value set"
+ValueSet: CZ_VehicleELPVS
+Id: cz-vehicle-elp-vs
+Title: "Vehicle value set"
+Description: "Vehicle value set"
 
 * ^url = "https://ncez.mzcr.cz/terminology/ValueSet/elp-ro-seznam-skupin"
 * ^experimental = false

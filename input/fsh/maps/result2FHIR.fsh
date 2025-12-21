@@ -26,7 +26,7 @@ Usage: #definition
 * group[=].element[=].target.display = ""					
 * group[=].element[=].target.equivalence = #equivalent
 * group[+].source = "https://hl7.cz/fhir/elp/StructureDefinition/MedicalReportCz"
-* group[=].target = "https://hl7.cz/fhir/elp/StructureDefinition/cz-diagnostic-report-elp"
+* group[=].target = "https://hl7.cz/fhir/elp/StructureDefinition/cz-observation-result-elp"
 * group[=].element[+].code = #ResultCz.restrictionsHarmonizedCodes				
 * group[=].element[=].display = "A.2.3.2 - Restrictions/conditions for driving a motor vehicle - harmonized codes"					
 * group[=].element[=].target.code = #CZ_ObservationResultElp.component:harmonizedCodes.code				

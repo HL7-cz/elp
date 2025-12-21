@@ -32,6 +32,7 @@ class "cz-composition-elp" <<Profile>> [[StructureDefinition-cz-composition-elp.
 class "cz-appointment-elp" <<Profile>> [[StructureDefinition-cz-appointment-elp.html]]
 class "cz-observation-examination-elp" <<Profile>> [[StructureDefinition-cz-observation-examination-elp.html]]
 class "cz-diagnostic-report-elp" <<Profile>> [[StructureDefinition-cz-diagnostic-report-elp.html]]
+class "cz-observation-result-elp" <<Profile>> [[StructureDefinition-cz-observation-result-elp.html]]
 
 "ELP - Lékařská prohlídka" <|. "cz-composition-elp"
 "ELP - Lékařská prohlídka" <|. "cz-appointment-elp"
@@ -39,12 +40,15 @@ class "cz-diagnostic-report-elp" <<Profile>> [[StructureDefinition-cz-diagnostic
 
 "ELP - Lékařský posudek" <|. "cz-composition-elp"
 "ELP - Lékařský posudek" <|. "cz-diagnostic-report-elp"
+"ELP - Lékařský posudek" <|. "cz-observation-result-elp"
 
 "ELP - Výsledek posudku" <|. "cz-composition-elp"
 "ELP - Výsledek posudku" <|. "cz-diagnostic-report-elp"
+"ELP - Výsledek posudku" <|. "cz-observation-result-elp"
 
 "cz-composition-elp" -d[hidden]-> "cz-appointment-elp"
 "cz-appointment-elp" -d[hidden]-> "cz-observation-examination-elp"
 "cz-observation-examination-elp" -d[hidden]-> "cz-diagnostic-report-elp"
+"cz-diagnostic-report-elp" -d[hidden]-> "cz-observation-result-elp"
 
 @enduml

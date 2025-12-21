@@ -37,13 +37,22 @@ Description: "Clinical document used to represent a Electronic Medical Report fo
     patient 1..* and
     practitioner 1..* and
     practitionerRole 1..* and
-    organization 1..*
+    organization 1..* and
+    documentReference 1..* and
+    diagnosticReport 1..1 and
+    observation 0..* and
+    appointment 0..*
+
 
 * entry[composition].resource only CZ_CompositionElp
 * entry[patient].resource only CZ_PatientCore
 * entry[practitioner].resource only CZ_PractitionerCore
 * entry[practitionerRole].resource only CZ_PractitionerRoleCore
 * entry[organization].resource only CZ_OrganizationCore
+* entry[documentReference].resource only CZ_Logo
+* entry[diagnosticReport].resource only CZ_DiagnosticReportElp
+* entry[appointment].resource only CZ_AppointmentElp
+* entry[observation].resource only CZ_ObservationExaminationElp or CZ_ObservationResultElp
 
 * signature ^short = "Report Digital Signature"
   * type ^short = "Digital Signature Purposes"

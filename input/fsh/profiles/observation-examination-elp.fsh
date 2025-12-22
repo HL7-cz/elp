@@ -13,3 +13,5 @@ Description: "Appointment used to represent an observation of medical examinatio
 * code ^binding.extension[=].extension[=].valueMarkdown = "Additional conformance binding to a colorectal cancer findings value set."
 * code ^binding.extension[=].url = "http://hl7.org/fhir/tools/StructureDefinition/additional-binding"
 * effectiveDateTime 0..1
+* subject only Reference(CZ_PatientCore)
+* performer only Reference(CZ_PractitionerRoleCore or CZ_PractitionerCore or CZ_OrganizationCore)

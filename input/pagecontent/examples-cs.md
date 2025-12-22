@@ -6,7 +6,7 @@ Všechny příklady lze nalézt na stránce [artifacts](artifacts.html).
 
 ### Příklady profilů
 
-- Příklad [Kompozice](Composition-930ca243-d3aa-4b38-9737-3c2e48000f74.html)
+- Příklad [Kompozice](Composition-543ea990-357a-4514-94d2-e33202cec664.html)
 - Příklad [Lékařský posudek](DiagnosticReport-03b0d597-d68d-4966-9400-7752bb3ee39d.html)
 - Příklad [Lékařská prohlídka](Observation-777f4db4-4a50-4f89-8bc6-287a59973807.html)
 - Příklad [Výsledek posudku](Observation-9994fdeb-dc0c-43aa-a998-6f02e7b88d32.html)

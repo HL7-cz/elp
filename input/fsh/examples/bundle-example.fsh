@@ -60,7 +60,7 @@ Usage: #example
 * section[medicalExamination].code = $loinc#56446-8
 * section[medicalExamination].entry[0] = Reference(urn:uuid:064c136d-0d08-4b8f-bd76-8d79de3ee99e)
 * section[medicalExamination].entry[1] = Reference(urn:uuid:777f4db4-4a50-4f89-8bc6-287a59973807)
-* section[medicalReport].title = "Medical Examination Section"
+* section[medicalReport].title = "Medical Report Section"
 * section[medicalReport].code =  $loinc#104988-1
 * section[medicalReport].entry[0] = Reference(urn:uuid:03b0d597-d68d-4966-9400-7752bb3ee39d)
 

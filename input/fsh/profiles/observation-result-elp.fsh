@@ -30,6 +30,7 @@ Description: "Appointment used to represent an observation of medical report for
   * valueCodeableConcept from CZ_RestrictionClarificationELPVS (required)
 
 * valueCodeableConcept from CZ_VehicleELPVS
+  * ^short = "vehicle type to which the restrictions apply"
 * subject only Reference(CZ_PatientCore)
 * performer only Reference(CZ_PractitionerRoleCore or CZ_PractitionerCore or CZ_OrganizationCore)
 * effectiveDateTime 1..1

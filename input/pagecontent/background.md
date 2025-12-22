@@ -61,7 +61,7 @@ Ensuring the assessment of the medical fitness of applicants for a driving licen
 
 **Data recipients:**
 - Ministry of Transport of the Czech Republic via the Shared Services Information System.
-- ORP/Driving schools (for validation of applicants' medical fitness) via the Ministry of Transport of the Czech Republic – Central Register of Drivers (CRŘ).
+- Municipalities with extended powers (ORP)/Driving schools (for validation of applicants' medical fitness) via the Ministry of Transport of the Czech Republic – Central Register of Drivers (CRŘ).
 
 **Data to be used:**
 - Medical assessment (XML structure).
@@ -69,7 +69,7 @@ Ensuring the assessment of the medical fitness of applicants for a driving licen
 **Processes:**
 - Data transfer: Medical examination and issuance of an assessment, followed by storage of the assessment in the Ministry of Health of the Czech Republic system. 
 - Decision: Based on the validation of medical fitness, the applicant will be allowed to continue with instruction and training if they are fit, or a driving license will be issued. 
-- Data acquisition: The Ministry of Transport of the Czech Republic downloads data on the driver's medical assessment and stores it in its system for possible provision to the ORP or the Police of the Czech Republic.
+- Data acquisition: The Ministry of Transport of the Czech Republic downloads data on the driver's medical assessment and stores it in its system for possible provision to the Municipalities with extended powers (ORP) or the Police of the Czech Republic.
 
 <div>
 <img src="img-sit_zpusobilost_en.png" class="figure-img img-responsive img-rounded center-block" width="70%">
@@ -113,7 +113,7 @@ Assessment of medical fitness for drivers who have specific conditions for drivi
 **Data recipients:**
 - Ministry of Transport of the Czech Republic via the Shared Services Information System.
 - Driving schools (for accepting applicants with special needs) via the Ministry of Transport of the Czech Republic – Central Register of Drivers (CRŘ).
-- ORP/Czech Police (for checking eligibility) via the Ministry of Transport of the Czech Republic - CRŘ. 
+- Municipalities with extended powers (ORP)/Czech Police (for checking eligibility) via the Ministry of Transport of the Czech Republic - CRŘ. 
 
 **Data to be used:**
 - Medical assessment (XML for structured information on health restrictions). 
@@ -138,7 +138,7 @@ Notification of a change in the medical fitness of the patient in question – a
 
 **Data recipients:**
 - Ministry of Transport of the Czech Republic via the Shared Services Information System.
-- ORP/Czech Police (for eligibility checks) via the Ministry of Transport of the Czech Republic – Central Driver Register.
+- Municipalities with extended powers (ORP)/Czech Police (for eligibility checks) via the Ministry of Transport of the Czech Republic – Central Driver Register.
 
 **Data to be used:**
 - Updated medical assessment (XML for structured information on health restrictions).
@@ -146,7 +146,7 @@ Notification of a change in the medical fitness of the patient in question – a
 **Processes:**
 - Data transfer: The doctor issues an updated medical assessment. The Ministry of Health of the Czech Republic system sends a notification of the update of the medical assessment of the relevant patient – driver.
 - Validation: Based on the notification, the Ministry of Transport downloads the updated assessment and enters it into the Central Register of Drivers.
-- Decision: Based on the validation of medical fitness, the ORP assesses the situation.  
+- Decision: Based on the validation of medical fitness, the Municipalities with extended powers (ORP) assesses the situation.  
 
 <div>
 <img src="img-sit_zmena-zpusobilosti_en.png" class="figure-img img-responsive img-rounded center-block" width="70%">

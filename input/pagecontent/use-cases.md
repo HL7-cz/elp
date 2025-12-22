@@ -1,6 +1,6 @@
 ### Medical assessment for driving motor vehicles
 
-The basic process for issuing an Electronic Medical Assessment (ELP) is designed to minimize administrative burden, increase efficiency, and ensure the secure handling of sensitive health data. 
+The basic process for issuing an Electronic Medical Report (ELP) is designed to minimize administrative burden, increase efficiency, and ensure the secure handling of sensitive health data. 
 From the perspective of the Ministry of Health (MZ ČR), the aim of the process is to issue a valid and valid electronic medical assessment, which is stored in the MZ ČR system and can be securely shared with the patient or relevant institutions.
 
 The aim of the process from the perspective of third parties, in particular the Ministry of Transport of the Czech Republic (MD ČR), as well as the Police of the Czech Republic (PČR) or municipalities with extended powers (ORP) through the MD ČR, is to obtain information about a person's fitness to drive a motor vehicle through a medical assessment for a driver's license (ŘO) for a specific person – the driver.
@@ -55,7 +55,7 @@ The functioning of the ELP system requires clearly defined organizational respon
 **Healthcare professionals (PZS):**
 - may view the ELP only in direct connection with the provision of healthcare (CBAC - Context-based access control).
 
-**Public administration institutions (e.g., Czech Social Security Administration, Police of the Czech Republic, Ministry of Transport of the Czech Republic, ORP):**
+**Public administration institutions (e.g., Czech Social Security Administration, Police of the Czech Republic, Ministry of Transport of the Czech Republic, Municipalities with extended powers):**
 - have access to assessments through the Shared Services Information System,
 - can only read assessments relevant to their agenda (e.g., driving ability, work ability, social benefits).
 

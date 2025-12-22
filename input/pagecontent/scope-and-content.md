@@ -5,8 +5,8 @@
 - This document entitles the holder to drive a certain category of vehicle, with each category corresponding to specific types of vehicles. 
 - A DL is obtained after successfully passing theoretical and practical tests and undergoing a medical examination.
 
-**Medical assessment / Electronic medical assessment (ELP)**
-- A medical assessment of medical fitness or health status is a document issued by a healthcare provider (HCP) at the request of the patient who is the person being assessed, or another authorized person, after the medical fitness or health status of the person being assessed has been assessed by an assessing physician.
+**Medical assessment / Electronic medical report (ELP)**
+- A medical assessment of medical fitness or health status is a document issued by a healthcare provider (PZS) at the request of the patient who is the person being assessed, or another authorized person, after the medical fitness or health status of the person being assessed has been assessed by an assessing physician.
 - A medical assessment may be issued by a general practitioner, specialist, or assessing physician. In some cases, it must be prepared by an assessment committee or other specialized health authority.
 - General issues relating to medical assessments are primarily enshrined in the `Act on Specific Health Services, Chapter IV`. 
 - The general requirements for current medical assessments are set out in `Part 5 of Annex 1 to the Decree on Medical Documentation`. 

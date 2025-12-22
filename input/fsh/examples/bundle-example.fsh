@@ -43,7 +43,7 @@ InstanceOf: CZ_CompositionElp
 Title: "Composition: Electronic Medical Report (CZ)"
 Description: "Composition example for Electronic Medical Report."
 Usage: #example
-* id = "930ca243-d3aa-4b38-9737-3c2e48000f74"
+* id = "543ea990-357a-4514-94d2-e33202cec664"
 * identifier
   * system = "http://example.org/myhospital/reportidentifiers"
   * value = "dfkjewoieoijwoskdjg"  

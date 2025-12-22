@@ -1,0 +1,54 @@
+@startuml
+hide circle
+hide stereotype
+hide members
+hide methods
+skinparam linetype ortho
+skinparam class {
+BackgroundColor<<LogicalModel>> #APPLICATION
+BackgroundColor<<Profile>> #TECHNOLOGY
+}
+legend right
+| <#APPLICATION>  Logical model |
+| <#TECHNOLOGY>  Profile |
+endlegend
+
+class "Medical examination" <<LogicalModel>> [[StructureDefinition-MedicalExaminationCz.html]]
+note top #EEEEAE [[ConceptMap-MedicalExamination2FHIR-cz.html]]
+Concept Map
+endnote
+
+class "Result of medical report" <<LogicalModel>> [[StructureDefinition-ResultCz.html]]
+note top #EEEEAE [[ConceptMap-Result2FHIR-cz.html]]
+Concept Map
+endnote
+
+class "Medical report" <<LogicalModel>> [[StructureDefinition-MedicalReportCz.html]]
+note top #EEEEAE [[ConceptMap-MedicalReport2FHIR-cz.html]]
+Concept Map
+endnote
+
+class "cz-composition-elp" <<Profile>> [[StructureDefinition-cz-composition-elp.html]]
+class "cz-appointment-elp" <<Profile>> [[StructureDefinition-cz-appointment-elp.html]]
+class "cz-observation-examination-elp" <<Profile>> [[StructureDefinition-cz-observation-examination-elp.html]]
+class "cz-diagnostic-report-elp" <<Profile>> [[StructureDefinition-cz-diagnostic-report-elp.html]]
+class "cz-observation-result-elp" <<Profile>> [[StructureDefinition-cz-observation-result-elp.html]]
+
+"Medical examination" <|. "cz-composition-elp"
+"Medical examination" <|. "cz-appointment-elp"
+"Medical examination" <|. "cz-observation-examination-elp"
+
+"Medical report" <|. "cz-composition-elp"
+"Medical report" <|. "cz-diagnostic-report-elp"
+"Medical report" <|. "cz-observation-result-elp"
+
+"Result of medical report" <|. "cz-composition-elp"
+"Result of medical report" <|. "cz-diagnostic-report-elp"
+"Result of medical report" <|. "cz-observation-result-elp"
+
+"cz-composition-elp" -d[hidden]-> "cz-appointment-elp"
+"cz-appointment-elp" -d[hidden]-> "cz-observation-examination-elp"
+"cz-observation-examination-elp" -d[hidden]-> "cz-diagnostic-report-elp"
+"cz-diagnostic-report-elp" -d[hidden]-> "cz-observation-result-elp"
+
+@enduml

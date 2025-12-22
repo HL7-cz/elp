@@ -1,0 +1,34 @@
+@startuml
+hide circle
+hide stereotype
+hide members
+hide methods
+skinparam linetype ortho
+skinparam class {
+BackgroundColor<<LogicalModel>> #APPLICATION
+BackgroundColor<<Profile>> #TECHNOLOGY
+}
+legend right
+| <#APPLICATION>  Logical model |
+| <#TECHNOLOGY>  Profile |
+endlegend
+class "Header of Electronic medical report" <<LogicalModel>> [[StructureDefinition-HeaderElpCz.html]]
+note top #EEEEAE [[ConceptMap-Header2FHIR-cz.html]]
+Concept Map
+endnote
+
+class "cz-patient-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-patient-core.html]]
+class "cz-practitionerrole-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-practitionerrole-core.html]]
+class "cz-bundle-elp" <<Profile>> [[StructureDefinition-cz-bundle-elp.html]]
+class "cz-composition-elp" <<Profile>> [[StructureDefinition-cz-composition-elp.html]]
+
+"Header of Electronic medical report" <|. "cz-composition-elp"
+"Header of Electronic medical report" <|. "cz-bundle-elp"
+"Header of Electronic medical report" <|. "cz-patient-core"
+"Header of Electronic medical report" <|. "cz-practitionerrole-core"
+
+"cz-bundle-elp" -d[hidden]-> "cz-composition-elp"
+"cz-composition-elp" -d[hidden]-> "cz-patient-core"
+"cz-patient-core" -d[hidden]-> "cz-practitionerrole-core"
+
+@enduml

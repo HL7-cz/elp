@@ -1,9 +1,558 @@
-<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir../../input-cache/schemas/R5/fhir-single.xsd">
-<!--h3 id="overview">Mapování logického modelu hlavičky</h3>
-<a> </a-->
-<p>V této části je uveden diagram, který ukazuje, jak je logický model Elektronického lékařského posudku mapován na profily HL7 FHIR v rámci implementační specifikace.</p>
-<!--p>Hereafter a browseable diagram showing how the Imaging Order header model is realized by the HL7 FHIR Profiles of this guide</p-->
-<h3 id="model">Model Overview</h3>
-<a> </a>
-<p>{% include elpBody-map-cs.svg %}</p>
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+
+  <style type="text/css">
+
+      .table-wrap {
+        border: 1px solid #c9cdd3;
+        border-radius: 10px;
+        background: #f7f8fa;
+        padding: 10px;
+        margin: 0 0 1rem 0;
+      }
+
+      .table-wrap table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        background: #fff;
+      }
+
+      .table-wrap th,
+      .table-wrap td {
+        border: 1px solid #bfc5cc;
+        padding: 6px 8px;
+        vertical-align: top;
+        word-wrap: break-word;
+      }
+
+      .table-wrap caption {
+        text-align: left;
+        font-weight: bold;
+        margin: 0 0 6px 0;
+      }
+
+      .src-head { background: #2f63b7; color: #fff; }
+      .relhead { background: #7b389f; color: #fff; }
+      .tgt-head { background: #cf003e; color: #fff; }
+
+      .src-sub { background: #97abd7; }
+      .relsub { background: #c9bed1; }
+      .tgt-sub { background: #cf8398; }
+
+    </style>
+
+
+    <!-- Název stránky je doplněn ze sushi-config.yaml. -->
+
+    <p>
+      Tato stránka vysvětluje, jak jsou konceptuální prvky logických modelů těla Elektronického lékařského posudku (lékařská prohlídka, lékařský posudek a výsledek posudku) vyjádřeny v odpovídajících FHIR profilech použitých v této implementační příručce.
+    </p>
+
+    <h3>Přehled modelu</h3>
+
+    <p>{% include elpBody-map-cs.svg %}</p>
+
+    <h3>A.2.1 - Lékařská prohlídka</h3>
+
+    <div class="table-wrap">
+
+      <strong>Kontext mapování</strong>
+
+      <ul>
+        <li><strong>Zdrojový logický model:</strong> <a href="StructureDefinition-LogMedicalExaminationCz.html">A.2.1 - Lékařská prohlídka</a></li>
+        <li><strong>Zdrojový mapovací soubor:</strong> <code>MedicalExamination2FHIR.fsh</code></li>
+        <li><strong>Rozsah mapování:</strong> A.2.1 Lékařská prohlídka</li>
+      </ul>
+
+    </div>
+
+    <div class="table-wrap">
+
+      <table summary="Lékařská prohlídka -&gt; FHIR profily (CZ ELP)">
+
+        <caption>Lékařská prohlídka -&gt; FHIR profily (CZ ELP)</caption>
+
+        <thead>
+
+          <tr>
+            <th colspan="2" class="src-head">Lékařská prohlídka (Logický model)</th>
+            <th class="relhead">Vztah</th>
+            <th colspan="4" class="tgt-head">FHIR cíl</th>
+          </tr>
+
+          <tr>
+            <th class="src-sub">Prvek</th>
+            <th class="src-sub">Popis</th>
+            <th class="relsub">Vztah</th>
+            <th class="tgt-sub">Zdroj/Profil</th>
+            <th class="tgt-sub">Prvek</th>
+            <th class="tgt-sub">Reference</th>
+            <th class="tgt-sub">Poznámky</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><a href="StructureDefinition-LogMedicalExaminationCz.html">LogMedicalExaminationCz</a></td>
+            <td>
+            A.2.1 - Lékařská prohlídka - Zjištění o zdravotním stavu posuzované osoby a komplexní fyzikální vyšetření.
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="StructureDefinition-cz-composition-elp.html">Composition (ELP CZ)</a></td>
+            <td>
+            section:medicalExamination
+            </td>
+            <td>
+            Composition (CZ_CompositionElp)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogMedicalExaminationCz.html">druhProhlidky</a></td>
+            <td>
+            A.2.1.1 - Druh prohlídky - Vstupní, pravidelná nebo mimořádná prohlídka.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-appointment-elp.html">Appointment (ELP CZ)</a></td>
+            <td>
+            serviceCategory
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).section:medicalExamination.entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogMedicalExaminationCz.html">posouzeniPodleSkupiny</a></td>
+            <td>
+            A.2.1.2 - Posouzení podle skupiny - Posouzení podle skupiny z číselníku SkupinaZadatelRidicRo.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-appointment-elp.html">Appointment (ELP CZ)</a></td>
+            <td>
+            serviceType
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).section:medicalExamination.entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogMedicalExaminationCz.html">datumProhlidky</a></td>
+            <td>
+            A.2.1.3 - Datum prohlídky - Datum a čas provedení lékařské prohlídky.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-appointment-elp.html">Appointment (ELP CZ)</a></td>
+            <td>
+            end
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).section:medicalExamination.entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogMedicalExaminationCz.html">odborneVysetreni</a></td>
+            <td>
+            A.2.1.4 - Odborné vyšetření - Informace o odborném vyšetření, zda bylo provedeno a případně jaké.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-observation-examination-elp.html">Observation of medical examination (ELP CZ)</a></td>
+            <td>
+            
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).section:medicalExamination.entry
+            </td>
+            <td>
+            Jedno Observation pro každé odborné vyšetření.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogMedicalExaminationCz.html">odborneVysetreni.typ</a></td>
+            <td>
+            A.2.1.4.1 - Typ vyšetření - Typ vyšetření z číselníku TypOdbornehoVysetreni.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-observation-examination-elp.html">Observation of medical examination (ELP CZ)</a></td>
+            <td>
+            code
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).section:medicalExamination.entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogMedicalExaminationCz.html">odborneVysetreni.datum</a></td>
+            <td>
+            A.2.1.4.2 - Datum vyšetření - Datum a čas provedení odborného vyšetření.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-observation-examination-elp.html">Observation of medical examination (ELP CZ)</a></td>
+            <td>
+            effectiveDateTime
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).section:medicalExamination.entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <h3>A.2.2 - Lékařský posudek</h3>
+
+    <div class="table-wrap">
+
+      <strong>Kontext mapování</strong>
+
+      <ul>
+        <li><strong>Zdrojový logický model:</strong> <a href="StructureDefinition-LogMedicalReportCz.html">A.2.2 - Lékařský posudek</a></li>
+        <li><strong>Zdrojový mapovací soubor:</strong> <code>MedicalReport2FHIR.fsh</code></li>
+        <li><strong>Rozsah mapování:</strong> A.2.2 Lékařský posudek</li>
+      </ul>
+
+    </div>
+
+    <div class="table-wrap">
+
+      <table summary="Lékařský posudek -&gt; FHIR profily (CZ ELP)">
+
+        <caption>Lékařský posudek -&gt; FHIR profily (CZ ELP)</caption>
+
+        <thead>
+
+          <tr>
+            <th colspan="2" class="src-head">Lékařský posudek (Logický model)</th>
+            <th class="relhead">Vztah</th>
+            <th colspan="4" class="tgt-head">FHIR cíl</th>
+          </tr>
+
+          <tr>
+            <th class="src-sub">Prvek</th>
+            <th class="src-sub">Popis</th>
+            <th class="relsub">Vztah</th>
+            <th class="tgt-sub">Zdroj/Profil</th>
+            <th class="tgt-sub">Prvek</th>
+            <th class="tgt-sub">Reference</th>
+            <th class="tgt-sub">Poznámky</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><a href="StructureDefinition-LogMedicalReportCz.html">LogMedicalReportCz</a></td>
+            <td>
+            A.2.2 - Lékařský posudek - Posudek musí být jednoznačný a nesmí obsahovat diagnózu nemoci.
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="StructureDefinition-cz-diagnostic-report-elp.html">Diagnostic Report (ELP CZ)</a></td>
+            <td>
+            
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).section:medicalReport.entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogMedicalReportCz.html">druhPosudku</a></td>
+            <td>
+            A.2.2.1 - Druh posudku - Typový druh posudku pro řidičské oprávnění podle číselníku DruhPosudkuRO.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-diagnostic-report-elp.html">Diagnostic Report (ELP CZ)</a></td>
+            <td>
+            category
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).section:medicalReport.entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogMedicalReportCz.html">skupinaRidickehoOpravneni</a></td>
+            <td>
+            A.2.2.2 - Skupina řidičského oprávnění - Skupina vozidel, pro kterou je řidičské oprávnění uděleno (číselník SeznamSkupinRo).
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-observation-result-elp.html">Observation of medical report (ELP CZ)</a></td>
+            <td>
+            valueCodeableConcept
+            </td>
+            <td>
+            DiagnosticReport (CZ_DiagnosticReportElp).result
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogMedicalReportCz.html">datumPlatnostiPosudkuDo</a></td>
+            <td>
+            A.2.2.3 - Datum platnosti posudku - Datum ukončení platnosti lékařského posudku.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-diagnostic-report-elp.html">Diagnostic Report (ELP CZ)</a></td>
+            <td>
+            effectivePeriod.end
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).section:medicalReport.entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogMedicalReportCz.html">datumVystaveniPosudku</a></td>
+            <td>
+            A.2.2.4 - Datum vystavení posudku - Datum a čas vystavení lékařského posudku.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-diagnostic-report-elp.html">Diagnostic Report (ELP CZ)</a></td>
+            <td>
+            issued
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).section:medicalReport.entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogMedicalReportCz.html">datumVystaveniPosudku</a></td>
+            <td>
+            A.2.2.4 - Datum vystavení posudku - Datum a čas vystavení lékařského posudku.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-observation-result-elp.html">Observation of medical report (ELP CZ)</a></td>
+            <td>
+            effectiveDateTime
+            </td>
+            <td>
+            DiagnosticReport (CZ_DiagnosticReportElp).result
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <h3>A.2.3 - Výsledek posudku</h3>
+
+    <div class="table-wrap">
+
+      <strong>Kontext mapování</strong>
+
+      <ul>
+        <li><strong>Zdrojový logický model:</strong> <a href="StructureDefinition-LogResultCz.html">A.2.3 - Výsledek posudku</a></li>
+        <li><strong>Zdrojový mapovací soubor:</strong> <code>Result2FHIR.fsh</code></li>
+        <li><strong>Rozsah mapování:</strong> A.2.3 Výsledek posudku</li>
+      </ul>
+
+    </div>
+
+    <div class="table-wrap">
+
+      <table summary="Výsledek posudku -&gt; FHIR profily (CZ ELP)">
+
+        <caption>Výsledek posudku -&gt; FHIR profily (CZ ELP)</caption>
+
+        <thead>
+
+          <tr>
+            <th colspan="2" class="src-head">Výsledek posudku (Logický model)</th>
+            <th class="relhead">Vztah</th>
+            <th colspan="4" class="tgt-head">FHIR cíl</th>
+          </tr>
+
+          <tr>
+            <th class="src-sub">Prvek</th>
+            <th class="src-sub">Popis</th>
+            <th class="relsub">Vztah</th>
+            <th class="tgt-sub">Zdroj/Profil</th>
+            <th class="tgt-sub">Prvek</th>
+            <th class="tgt-sub">Reference</th>
+            <th class="tgt-sub">Poznámky</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><a href="StructureDefinition-LogResultCz.html">LogResultCz</a></td>
+            <td>
+            A.2.3 - Výsledek posudku - Výsledek posudku o zdravotní způsobilosti k řízení motorových vozidel.
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="StructureDefinition-cz-diagnostic-report-elp.html">Diagnostic Report (ELP CZ)</a></td>
+            <td>
+            
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).section:medicalReport.entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogResultCz.html">zdravotniZpusobilost</a></td>
+            <td>
+            A.2.3.1 - Zdravotní způsobilost - Zda je posuzovaná osoba zdravotně způsobilá k řízení motorových vozidel.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-diagnostic-report-elp.html">Diagnostic Report (ELP CZ)</a></td>
+            <td>
+            conclusionCode
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).section:medicalReport.entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogResultCz.html">omezeniHarmonizovaneKody</a></td>
+            <td>
+            A.2.3.2 - Omezení/podmínky pro řízení motorového vozidla – harmonizované kódy
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-observation-result-elp.html">Observation of medical report (ELP CZ)</a></td>
+            <td>
+            component:harmonizedCodes.valueCodeableConcept
+            </td>
+            <td>
+            DiagnosticReport (CZ_DiagnosticReportElp).result
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogResultCz.html">omezeniNarodniKody</a></td>
+            <td>
+            A.2.3.3 - Omezení/podmínky pro řízení motorového vozidla – národní kódy
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-observation-result-elp.html">Observation of medical report (ELP CZ)</a></td>
+            <td>
+            component:nationalCodes.valueCodeableConcept
+            </td>
+            <td>
+            DiagnosticReport (CZ_DiagnosticReportElp).result
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogResultCz.html">upresneniOmezeni</a></td>
+            <td>
+            A.2.3.4 - Upřesnění omezení/podmínek - Písmena pro použití v kombinaci s harmonizovanými kódy 01 až 44.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-observation-result-elp.html">Observation of medical report (ELP CZ)</a></td>
+            <td>
+            component:clarification.valueCodeableConcept
+            </td>
+            <td>
+            DiagnosticReport (CZ_DiagnosticReportElp).result
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogResultCz.html">zduvodneni</a></td>
+            <td>
+            A.2.3.5 - Zdůvodnění k omezení či podmínce - Textový popis posuzujícího lékaře.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-diagnostic-report-elp.html">Diagnostic Report (ELP CZ)</a></td>
+            <td>
+            conclusion
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).section:medicalReport.entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+
+    </div>
+
 </div>

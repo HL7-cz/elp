@@ -13,22 +13,22 @@ legend right
 | <#TECHNOLOGY>  Profil |
 endlegend
 class "Hlavička elektronického lékařského posudku" <<LogicalModel>> [[StructureDefinition-LogHeaderElpCz.html]]
-note top #EEEEAE [[ConceptMap-Header2FHIR-cz.html]]
-Concept Mapa
-endnote
 
 class "cz-patient-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-patient-core.html]]
 class "cz-practitionerrole-core" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-practitionerrole-core.html]]
 class "cz-bundle-elp" <<Profile>> [[StructureDefinition-cz-bundle-elp.html]]
 class "cz-composition-elp" <<Profile>> [[StructureDefinition-cz-composition-elp.html]]
+class "cz-provenance" <<Profile>> [[https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-provenance.html]]
 
 "Hlavička elektronického lékařského posudku" <|. "cz-composition-elp"
 "Hlavička elektronického lékařského posudku" <|. "cz-bundle-elp"
 "Hlavička elektronického lékařského posudku" <|. "cz-patient-core"
 "Hlavička elektronického lékařského posudku" <|. "cz-practitionerrole-core"
+"Hlavička elektronického lékařského posudku" <|. "cz-provenance"
 
 "cz-bundle-elp" -d[hidden]-> "cz-composition-elp"
 "cz-composition-elp" -d[hidden]-> "cz-patient-core"
 "cz-patient-core" -d[hidden]-> "cz-practitionerrole-core"
+"cz-practitionerrole-core" -d[hidden]-> "cz-provenance"
 
 @enduml

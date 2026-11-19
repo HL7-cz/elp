@@ -1,9 +1,709 @@
-<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir../../input-cache/schemas/R5/fhir-single.xsd">
-<!--h3 id="overview">Mapování logického modelu hlavičky</h3>
-<a> </a-->
-<p>V této části je uveden diagram, který ukazuje, jak je logický model hlavičky Elektronického lékařského posudku mapován na profily HL7 FHIR v rámci implementační specifikace.</p>
-<!--p>Hereafter a browseable diagram showing how the Imaging Order header model is realized by the HL7 FHIR Profiles of this guide</p-->
-<h3 id="model">Model Overview</h3>
-<a> </a>
-<p>{% include elpHead-map-cs.svg %}</p>
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+
+  <style type="text/css">
+
+      .table-wrap {
+        border: 1px solid #c9cdd3;
+        border-radius: 10px;
+        background: #f7f8fa;
+        padding: 10px;
+        margin: 0 0 1rem 0;
+      }
+
+      .table-wrap table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        background: #fff;
+      }
+
+      .table-wrap th,
+      .table-wrap td {
+        border: 1px solid #bfc5cc;
+        padding: 6px 8px;
+        vertical-align: top;
+        word-wrap: break-word;
+      }
+
+      .table-wrap caption {
+        text-align: left;
+        font-weight: bold;
+        margin: 0 0 6px 0;
+      }
+
+      .src-head { background: #2f63b7; color: #fff; }
+      .relhead { background: #7b389f; color: #fff; }
+      .tgt-head { background: #cf003e; color: #fff; }
+
+      .src-sub { background: #97abd7; }
+      .relsub { background: #c9bed1; }
+      .tgt-sub { background: #cf8398; }
+
+    </style>
+
+
+    <!-- Název stránky je doplněn ze sushi-config.yaml. -->
+
+    <p>
+      Tato stránka vysvětluje, jak jsou konceptuální prvky logického modelu hlavičky vyjádřeny v odpovídajících FHIR profilech použitých v této implementační příručce.
+    </p>
+
+    <h3>Přehled modelu</h3>
+
+    <p>{% include elpHead-map-cs.svg %}</p>
+
+    <div class="table-wrap">
+
+      <strong>Kontext mapování</strong>
+
+      <ul>
+        <li><strong>Zdrojový logický model:</strong> <a href="StructureDefinition-LogHeaderElpCz.html">A.1 - Hlavička dokumentu</a></li>
+        <li><strong>Zdrojový mapovací soubor:</strong> <code>Header2FHIR.fsh</code></li>
+        <li><strong>Rozsah mapování:</strong> A.1 Hlavička dokumentu Elektronického lékařského posudku</li>
+      </ul>
+
+    </div>
+
+    <div class="table-wrap">
+
+      <table summary="Hlavička -&gt; FHIR profily (CZ ELP)">
+
+        <caption>Hlavička -&gt; FHIR profily (CZ ELP)</caption>
+
+        <thead>
+
+          <tr>
+            <th colspan="2" class="src-head">Hlavička (Logický model)</th>
+            <th class="relhead">Vztah</th>
+            <th colspan="4" class="tgt-head">FHIR cíl</th>
+          </tr>
+
+          <tr>
+            <th class="src-sub">Prvek</th>
+            <th class="src-sub">Popis</th>
+            <th class="relsub">Vztah</th>
+            <th class="tgt-sub">Zdroj/Profil</th>
+            <th class="tgt-sub">Prvek</th>
+            <th class="tgt-sub">Reference</th>
+            <th class="tgt-sub">Poznámky</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><a href="StructureDefinition-LogHeaderElpCz.html">pacient</a></td>
+            <td>
+            A.1.1 - Pacient - Údaje o pacientovi.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-patient-core.html">Patient (CZ core)</a></td>
+            <td>
+            
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).subject
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogHeaderElpCz.html">pacient.rid</a></td>
+            <td>
+            A.1.1.1 - RID - Resortní identifikátor pacienta.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-patient-core.html">Patient (CZ core)</a></td>
+            <td>
+            identifier:RID
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).subject
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogHeaderElpCz.html">pacient.jmeno</a></td>
+            <td>
+            A.1.1.2 - Jméno - Jméno pacienta.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-patient-core.html">Patient (CZ core)</a></td>
+            <td>
+            name.given
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).subject
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogHeaderElpCz.html">pacient.prijmeni</a></td>
+            <td>
+            A.1.1.3 - Příjmení - Příjmení pacienta.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-patient-core.html">Patient (CZ core)</a></td>
+            <td>
+            name.family
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).subject
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogHeaderElpCz.html">pacient.datumNarozeni</a></td>
+            <td>
+            A.1.1.4 - Datum narození - Datum narození pacienta.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-patient-core.html">Patient (CZ core)</a></td>
+            <td>
+            birthDate
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).subject
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogHeaderElpCz.html">pacient.adresaPobytu</a></td>
+            <td>
+            A.1.1.5 - Adresa
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-patient-core.html">Patient (CZ core)</a></td>
+            <td>
+            address
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).subject
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogHeaderElpCz.html">pacient.kontakt</a></td>
+            <td>
+            A.1.1.6 - Kontakt - Kontaktní údaje na pacienta (email, telefon).
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-patient-core.html">Patient (CZ core)</a></td>
+            <td>
+            telecom
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).subject
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogHeaderElpCz.html">pacient.druhDokladu</a></td>
+            <td>
+            A.1.1.7 - Druh dokladu - Druh dokladu totožnosti pacienta.
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-patient-core.html">Patient (CZ core)</a></td>
+            <td>
+            identifier
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).subject
+            </td>
+            <td>
+            Druh dokladu je vyjádřen použitým slicem identifikátoru (např. identifier:OP pro občanský průkaz, identifier:PAS pro cestovní pas).
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogHeaderElpCz.html">pacient.cisloDokladu</a></td>
+            <td>
+            A.1.1.8 - Číslo dokladu - Číslo dokladu totožnosti pacienta.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-patient-core.html">Patient (CZ core)</a></td>
+            <td>
+            identifier.value
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).subject
+            </td>
+            <td>
+            Hodnota slicu identifikátoru odpovídajícího druhu dokladu (identifier:OP nebo identifier:PAS).
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogHeaderElpCz.html">posuzujiciLekar</a></td>
+            <td>
+            A.1.2 - Posuzující lékař - Údaje o posuzujícím lékaři.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-practitionerrole-core.html">PractitionerRole (CZ core)</a></td>
+            <td>
+            
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).author
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogHeaderElpCz.html">posuzujiciLekar.id</a></td>
+            <td>
+            A.1.2.1 - ID - Identifikační číslo zdravotnického pracovníka.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-practitioner-core.html">Practitioner (CZ core)</a></td>
+            <td>
+            identifier
+            </td>
+            <td>
+            PractitionerRole (CZ_PractitionerRoleCore).practitioner
+            </td>
+            <td>
+            Přednostně národní identifikátor zdravotnického pracovníka (identifier:KRZP).
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogHeaderElpCz.html">posuzujiciLekar.jmeno</a></td>
+            <td>
+            A.1.2.2 - Jméno - Jméno posuzujícího lékaře.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-practitioner-core.html">Practitioner (CZ core)</a></td>
+            <td>
+            name.given
+            </td>
+            <td>
+            PractitionerRole (CZ_PractitionerRoleCore).practitioner
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogHeaderElpCz.html">posuzujiciLekar.prijmeni</a></td>
+            <td>
+            A.1.2.3 - Příjmení - Příjmení posuzujícího lékaře.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-practitioner-core.html">Practitioner (CZ core)</a></td>
+            <td>
+            name.family
+            </td>
+            <td>
+            PractitionerRole (CZ_PractitionerRoleCore).practitioner
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogHeaderElpCz.html">posuzujiciLekar.odbornost</a></td>
+            <td>
+            A.1.2.4 - Odbornost - Odbornost posuzujícího lékaře.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-practitionerrole-core.html">PractitionerRole (CZ core)</a></td>
+            <td>
+            specialty
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).author
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogHeaderElpCz.html">posuzujiciLekar.idPoskytovatele</a></td>
+            <td>
+            A.1.2.5 - ID poskytovatele - Identifikační číslo poskytovatele zdravotní péče, kde je posuzující lékař zaměstnán.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-organization-core.html">Organization (CZ core)</a></td>
+            <td>
+            identifier
+            </td>
+            <td>
+            PractitionerRole (CZ_PractitionerRoleCore).organization
+            </td>
+            <td>
+            Přednostně národní identifikátor poskytovatele (identifier:ICZ).
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogHeaderElpCz.html">posuzujiciLekar.nazevPoskytovatele</a></td>
+            <td>
+            A.1.2.6 - Název poskytovatele - Název poskytovatele zdravotní péče, kde je posuzující lékař zaměstnán.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-organization-core.html">Organization (CZ core)</a></td>
+            <td>
+            name
+            </td>
+            <td>
+            PractitionerRole (CZ_PractitionerRoleCore).organization
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogHeaderElpCz.html">posuzujiciLekar.adresaPoskytovatele</a></td>
+            <td>
+            A.1.2.7 - Adresa poskytovatele - Adresa poskytovatele zdravotní péče, kde je posuzující lékař zaměstnán.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-organization-core.html">Organization (CZ core)</a></td>
+            <td>
+            address
+            </td>
+            <td>
+            PractitionerRole (CZ_PractitionerRoleCore).organization
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogHeaderElpCz.html">metadata</a></td>
+            <td>
+            A.1.3 - Metadata - Metadata dokumentu.
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="StructureDefinition-cz-composition-elp.html">Composition (ELP CZ)</a></td>
+            <td>
+            
+            </td>
+            <td>
+            Bundle (CZ_BundleElp).entry:composition
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogHeaderElpCz.html">metadata.id</a></td>
+            <td>
+            A.1.3.1 - ID - Jedinečný identifikátor lékařského posudku.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-composition-elp.html">Composition (ELP CZ)</a></td>
+            <td>
+            identifier
+            </td>
+            <td>
+            Composition (CZ_CompositionElp)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogHeaderElpCz.html">metadata.id</a></td>
+            <td>
+            A.1.3.1 - ID - Jedinečný identifikátor lékařského posudku.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-bundle-elp.html">Bundle (ELP CZ)</a></td>
+            <td>
+            identifier
+            </td>
+            <td>
+            Bundle (CZ_BundleElp)
+            </td>
+            <td>
+            Identifikátor instance dokumentu (Bundle).
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogHeaderElpCz.html">metadata.kategorie</a></td>
+            <td>
+            A.1.3.2 - Kategorie - Kategorie elektronického zdravotního záznamu (EHR).
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-composition-elp.html">Composition (ELP CZ)</a></td>
+            <td>
+            type
+            </td>
+            <td>
+            Composition (CZ_CompositionElp)
+            </td>
+            <td>
+            Pevně LOINC 104990-7 Driver license medical fitness certificate.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogHeaderElpCz.html">metadata.stav</a></td>
+            <td>
+            A.1.3.3 - Stav - Stav dokumentu.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-composition-elp.html">Composition (ELP CZ)</a></td>
+            <td>
+            status
+            </td>
+            <td>
+            Composition (CZ_CompositionElp)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogHeaderElpCz.html">metadata.datumVytvoreni</a></td>
+            <td>
+            A.1.3.4 - Datum vytvoření - Datum a čas vytvoření lékařského posudku.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-composition-elp.html">Composition (ELP CZ)</a></td>
+            <td>
+            date
+            </td>
+            <td>
+            Composition (CZ_CompositionElp)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogHeaderElpCz.html">metadata.datumVytvoreni</a></td>
+            <td>
+            A.1.3.4 - Datum vytvoření - Datum a čas vytvoření lékařského posudku.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-bundle-elp.html">Bundle (ELP CZ)</a></td>
+            <td>
+            timestamp
+            </td>
+            <td>
+            Bundle (CZ_BundleElp)
+            </td>
+            <td>
+            Kdy byla instance dokumentu (Bundle) sestavena.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogHeaderElpCz.html">metadata.nazevSouboru</a></td>
+            <td>
+            A.1.3.5 - Název souboru - Název souboru lékařského posudku.
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="StructureDefinition-cz-composition-elp.html">Composition (ELP CZ)</a></td>
+            <td>
+            title
+            </td>
+            <td>
+            Composition (CZ_CompositionElp)
+            </td>
+            <td>
+            Název dokumentu čitelný pro člověka.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogHeaderElpCz.html">metadata.spravceDokumentu</a></td>
+            <td>
+            A.1.3.6 - Správce dokumentu - Správce dokumentu lékařského posudku.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-organization-core.html">Organization (CZ core)</a></td>
+            <td>
+            
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).custodian
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogHeaderElpCz.html">metadata.duvernost</a></td>
+            <td>
+            A.1.3.7 - Důvěrnost - Úroveň důvěrnosti lékařského posudku.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-composition-elp.html">Composition (ELP CZ)</a></td>
+            <td>
+            confidentiality
+            </td>
+            <td>
+            Composition (CZ_CompositionElp)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogHeaderElpCz.html">metadata.jazyk</a></td>
+            <td>
+            A.1.3.8 - Jazyk - Jazyk, ve kterém je lékařský posudek napsán.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-composition-elp.html">Composition (ELP CZ)</a></td>
+            <td>
+            language
+            </td>
+            <td>
+            Composition (CZ_CompositionElp)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogHeaderElpCz.html">metadata.verze</a></td>
+            <td>
+            A.1.3.9 - Verze - Verze lékařského posudku.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="StructureDefinition-cz-composition-elp.html">Composition (ELP CZ)</a></td>
+            <td>
+            extension:version.valueString
+            </td>
+            <td>
+            Composition (CZ_CompositionElp)
+            </td>
+            <td>
+            Jako business verze, nikoli verze zdroje.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogHeaderElpCz.html">metadata.elektronickyPodpis</a></td>
+            <td>
+            A.1.3.10 - Elektronický podpis - Elektronický podpis nebo pečeť dokumentu.
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-provenance.html">Provenance (CZ core)</a></td>
+            <td>
+            
+            </td>
+            <td>
+            Bundle (CZ_BundleElp).entry:provenance
+            </td>
+            <td>
+            Podpisy jsou zaznamenány ve zdrojích Provenance obsažených v Bundle dokumentu; Provenance.target určuje podepsané zdroje.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogHeaderElpCz.html">metadata.elektronickyPodpis</a></td>
+            <td>
+            A.1.3.10 - Elektronický podpis - Elektronický podpis nebo pečeť dokumentu.
+            </td>
+            <td>
+            ekvivalentní
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-provenance.html">Provenance (CZ core)</a></td>
+            <td>
+            signature.data
+            </td>
+            <td>
+            Provenance (CZ_Provenance).signature
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-LogHeaderElpCz.html">metadata.casoveRazitko</a></td>
+            <td>
+            A.1.3.11 - Časové razítko - Elektronické časové razítko.
+            </td>
+            <td>
+            související
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-provenance.html">Provenance (CZ core)</a></td>
+            <td>
+            
+            </td>
+            <td>
+            Provenance (CZ_Provenance).signature
+            </td>
+            <td>
+            Bez samostatného prvku FHIR. Časové razítko je součástí struktury JAdES v Provenance.signature.data (A.1.3.10); signature.when není časovým razítkem (viz standard Elektronické podepisování EHR).
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+
+    </div>
+
 </div>

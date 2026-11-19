@@ -1,8 +1,558 @@
-<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir../../input-cache/schemas/R5/fhir-single.xsd">
-<!--h3 id="overview">Header Model map</h3>
-<a> </a-->
-<p>Hereafter a browseable diagram showing how the Electronic medical report model is realized by the HL7 FHIR Profiles of this guide</p>
-<h3 id="model">Model Overview</h3>
-<a> </a>
-<p>{% include elpBody-map.svg %}</p>
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+
+  <style type="text/css">
+
+      .table-wrap {
+        border: 1px solid #c9cdd3;
+        border-radius: 10px;
+        background: #f7f8fa;
+        padding: 10px;
+        margin: 0 0 1rem 0;
+      }
+
+      .table-wrap table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        background: #fff;
+      }
+
+      .table-wrap th,
+      .table-wrap td {
+        border: 1px solid #bfc5cc;
+        padding: 6px 8px;
+        vertical-align: top;
+        word-wrap: break-word;
+      }
+
+      .table-wrap caption {
+        text-align: left;
+        font-weight: bold;
+        margin: 0 0 6px 0;
+      }
+
+      .src-head { background: #2f63b7; color: #fff; }
+      .relhead { background: #7b389f; color: #fff; }
+      .tgt-head { background: #cf003e; color: #fff; }
+
+      .src-sub { background: #97abd7; }
+      .relsub { background: #c9bed1; }
+      .tgt-sub { background: #cf8398; }
+
+    </style>
+
+
+    <!-- The page title is supplied by sushi-config.yaml. -->
+
+    <p>
+      This page explains how conceptual elements from the body logical models of the Electronic Medical Report (medical examination, medical report and result) are expressed in the corresponding FHIR profiles used by this Implementation Guide.
+    </p>
+
+    <h3>Model Overview</h3>
+
+    <p>{% include elpBody-map.svg %}</p>
+
+    <h3>A.2.1 - Medical Examination</h3>
+
+    <div class="table-wrap">
+
+      <strong>Mapping Context</strong>
+
+      <ul>
+        <li><strong>Source logical model:</strong> <a href="StructureDefinition-MedicalExaminationCz.html">A.2.1 - Medical Examination</a></li>
+        <li><strong>Source mapping file:</strong> <code>MedicalExamination2FHIR.fsh</code></li>
+        <li><strong>Mapping scope:</strong> A.2.1 Medical examination</li>
+      </ul>
+
+    </div>
+
+    <div class="table-wrap">
+
+      <table summary="Medical Examination -&gt; FHIR Profiles (CZ ELP)">
+
+        <caption>Medical Examination -&gt; FHIR Profiles (CZ ELP)</caption>
+
+        <thead>
+
+          <tr>
+            <th colspan="2" class="src-head">Medical Examination (Logical Model)</th>
+            <th class="relhead">Relationship</th>
+            <th colspan="4" class="tgt-head">FHIR Target</th>
+          </tr>
+
+          <tr>
+            <th class="src-sub">Element</th>
+            <th class="src-sub">Description</th>
+            <th class="relsub">Relationship</th>
+            <th class="tgt-sub">Resource/Profile</th>
+            <th class="tgt-sub">Element</th>
+            <th class="tgt-sub">Reference</th>
+            <th class="tgt-sub">Notes</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><a href="StructureDefinition-MedicalExaminationCz.html">MedicalExaminationCz</a></td>
+            <td>
+            A.2.1 - Medical examination - Findings on the health status of the person being examined and comprehensive physical examination.
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="StructureDefinition-cz-composition-elp.html">Composition (ELP CZ)</a></td>
+            <td>
+            section:medicalExamination
+            </td>
+            <td>
+            Composition (CZ_CompositionElp)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-MedicalExaminationCz.html">MedicalExaminationCz.typeOfExamination</a></td>
+            <td>
+            A.2.1.1 - Type of examination - Initial, regular, or extraordinary examination.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-appointment-elp.html">Appointment (ELP CZ)</a></td>
+            <td>
+            serviceCategory
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).section:medicalExamination.entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-MedicalExaminationCz.html">MedicalExaminationCz.assessmentByGroup</a></td>
+            <td>
+            A.2.1.2 - Assessment by group - Assessment by group from the ApplicantGroupCode list.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-appointment-elp.html">Appointment (ELP CZ)</a></td>
+            <td>
+            serviceType
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).section:medicalExamination.entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-MedicalExaminationCz.html">MedicalExaminationCz.examinationDate</a></td>
+            <td>
+            A.2.1.3 - Examination date - Date and time of the medical examination.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-appointment-elp.html">Appointment (ELP CZ)</a></td>
+            <td>
+            end
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).section:medicalExamination.entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-MedicalExaminationCz.html">MedicalExaminationCz.specialistExamination</a></td>
+            <td>
+            A.2.1.4 - Specialist examination - Information about the specialist examination, whether it was performed and, if so, what type.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-observation-examination-elp.html">Observation of medical examination (ELP CZ)</a></td>
+            <td>
+            
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).section:medicalExamination.entry
+            </td>
+            <td>
+            One Observation per specialist examination.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-MedicalExaminationCz.html">MedicalExaminationCz.specialistExamination.type</a></td>
+            <td>
+            A.2.1.4.1 - Type of examination - Type of examination from the TypeOfSpecialistExamination code list.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-observation-examination-elp.html">Observation of medical examination (ELP CZ)</a></td>
+            <td>
+            code
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).section:medicalExamination.entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-MedicalExaminationCz.html">MedicalExaminationCz.specialistExamination.date</a></td>
+            <td>
+            A.2.1.4.2 - Date of examination - Date and time of the specialized examination.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-observation-examination-elp.html">Observation of medical examination (ELP CZ)</a></td>
+            <td>
+            effectiveDateTime
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).section:medicalExamination.entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <h3>A.2.2 - Medical Report</h3>
+
+    <div class="table-wrap">
+
+      <strong>Mapping Context</strong>
+
+      <ul>
+        <li><strong>Source logical model:</strong> <a href="StructureDefinition-MedicalReportCz.html">A.2.2 - Medical Report</a></li>
+        <li><strong>Source mapping file:</strong> <code>MedicalReport2FHIR.fsh</code></li>
+        <li><strong>Mapping scope:</strong> A.2.2 Medical report</li>
+      </ul>
+
+    </div>
+
+    <div class="table-wrap">
+
+      <table summary="Medical Report -&gt; FHIR Profiles (CZ ELP)">
+
+        <caption>Medical Report -&gt; FHIR Profiles (CZ ELP)</caption>
+
+        <thead>
+
+          <tr>
+            <th colspan="2" class="src-head">Medical Report (Logical Model)</th>
+            <th class="relhead">Relationship</th>
+            <th colspan="4" class="tgt-head">FHIR Target</th>
+          </tr>
+
+          <tr>
+            <th class="src-sub">Element</th>
+            <th class="src-sub">Description</th>
+            <th class="relsub">Relationship</th>
+            <th class="tgt-sub">Resource/Profile</th>
+            <th class="tgt-sub">Element</th>
+            <th class="tgt-sub">Reference</th>
+            <th class="tgt-sub">Notes</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><a href="StructureDefinition-MedicalReportCz.html">MedicalReportCz</a></td>
+            <td>
+            A.2.2 - Medical report - The report must be unambiguous and must not contain a diagnosis of illness.
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="StructureDefinition-cz-diagnostic-report-elp.html">Diagnostic Report (ELP CZ)</a></td>
+            <td>
+            
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).section:medicalReport.entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-MedicalReportCz.html">MedicalReportCz.typeOfAssessment</a></td>
+            <td>
+            A.2.2.1 - Type of assessment - Type of assessment for a driving license according to the TypeOfAssessmentRO code list.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-diagnostic-report-elp.html">Diagnostic Report (ELP CZ)</a></td>
+            <td>
+            category
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).section:medicalReport.entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-MedicalReportCz.html">MedicalReportCz.drivingLicenseGroup</a></td>
+            <td>
+            A.2.2.2 - Driving license group - Group of vehicles for which the driving license is issued (ListGroupRo code list).
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-observation-result-elp.html">Observation of medical report (ELP CZ)</a></td>
+            <td>
+            valueCodeableConcept
+            </td>
+            <td>
+            DiagnosticReport (CZ_DiagnosticReportElp).result
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-MedicalReportCz.html">MedicalReportCz.dateValidUntil</a></td>
+            <td>
+            A.2.2.3 - Date of validity of the assessment - Date of expiry of the medical assessment.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-diagnostic-report-elp.html">Diagnostic Report (ELP CZ)</a></td>
+            <td>
+            effectivePeriod.end
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).section:medicalReport.entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-MedicalReportCz.html">MedicalReportCz.dateOfIssueOfAssessment</a></td>
+            <td>
+            A.2.2.4 - Date of issue of assessment - Date and time of issue of the medical assessment.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-diagnostic-report-elp.html">Diagnostic Report (ELP CZ)</a></td>
+            <td>
+            issued
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).section:medicalReport.entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-MedicalReportCz.html">MedicalReportCz.dateOfIssueOfAssessment</a></td>
+            <td>
+            A.2.2.4 - Date of issue of assessment - Date and time of issue of the medical assessment.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-observation-result-elp.html">Observation of medical report (ELP CZ)</a></td>
+            <td>
+            effectiveDateTime
+            </td>
+            <td>
+            DiagnosticReport (CZ_DiagnosticReportElp).result
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <h3>A.2.3 - Result of the medical report</h3>
+
+    <div class="table-wrap">
+
+      <strong>Mapping Context</strong>
+
+      <ul>
+        <li><strong>Source logical model:</strong> <a href="StructureDefinition-ResultCz.html">A.2.3 - Result of the medical report</a></li>
+        <li><strong>Source mapping file:</strong> <code>Result2FHIR.fsh</code></li>
+        <li><strong>Mapping scope:</strong> A.2.3 Result of the assessment</li>
+      </ul>
+
+    </div>
+
+    <div class="table-wrap">
+
+      <table summary="Result -&gt; FHIR Profiles (CZ ELP)">
+
+        <caption>Result -&gt; FHIR Profiles (CZ ELP)</caption>
+
+        <thead>
+
+          <tr>
+            <th colspan="2" class="src-head">Result (Logical Model)</th>
+            <th class="relhead">Relationship</th>
+            <th colspan="4" class="tgt-head">FHIR Target</th>
+          </tr>
+
+          <tr>
+            <th class="src-sub">Element</th>
+            <th class="src-sub">Description</th>
+            <th class="relsub">Relationship</th>
+            <th class="tgt-sub">Resource/Profile</th>
+            <th class="tgt-sub">Element</th>
+            <th class="tgt-sub">Reference</th>
+            <th class="tgt-sub">Notes</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><a href="StructureDefinition-ResultCz.html">ResultCz</a></td>
+            <td>
+            A.2.3 - Result of the assessment - Result of the assessment of medical fitness to drive motor vehicles.
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="StructureDefinition-cz-diagnostic-report-elp.html">Diagnostic Report (ELP CZ)</a></td>
+            <td>
+            
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).section:medicalReport.entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ResultCz.html">ResultCz.medicalfitness</a></td>
+            <td>
+            A.2.3.1 - Medical fitness - Whether the person being assessed is medically fit to drive motor vehicles.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-diagnostic-report-elp.html">Diagnostic Report (ELP CZ)</a></td>
+            <td>
+            conclusionCode
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).section:medicalReport.entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ResultCz.html">ResultCz.restrictionsHarmonizedCodes</a></td>
+            <td>
+            A.2.3.2 - Restrictions/conditions for driving a motor vehicle - harmonized codes
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-observation-result-elp.html">Observation of medical report (ELP CZ)</a></td>
+            <td>
+            component:harmonizedCodes.valueCodeableConcept
+            </td>
+            <td>
+            DiagnosticReport (CZ_DiagnosticReportElp).result
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ResultCz.html">ResultCz.restrictionsNationalCodes</a></td>
+            <td>
+            A.2.3.3 - Restrictions/conditions for driving a motor vehicle – national codes
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-observation-result-elp.html">Observation of medical report (ELP CZ)</a></td>
+            <td>
+            component:nationalCodes.valueCodeableConcept
+            </td>
+            <td>
+            DiagnosticReport (CZ_DiagnosticReportElp).result
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ResultCz.html">ResultCz.specificationRestriction</a></td>
+            <td>
+            A.2.3.4 - Specification of restrictions/conditions - Letters used in combination with harmonized codes 01 to 44.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-observation-result-elp.html">Observation of medical report (ELP CZ)</a></td>
+            <td>
+            component:clarification.valueCodeableConcept
+            </td>
+            <td>
+            DiagnosticReport (CZ_DiagnosticReportElp).result
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-ResultCz.html">ResultCz.justification</a></td>
+            <td>
+            A.2.3.5 - Justification for restriction or condition - Text description by the assessing physician.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-diagnostic-report-elp.html">Diagnostic Report (ELP CZ)</a></td>
+            <td>
+            conclusion
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).section:medicalReport.entry
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+
+    </div>
+
 </div>

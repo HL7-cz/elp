@@ -38,6 +38,9 @@ Usage: #example
 * entry[appointment].fullUrl = "urn:uuid:064c136d-0d08-4b8f-bd76-8d79de3ee99e"
 * entry[appointment].resource = cz-example-appointment
 
+* entry[provenance].fullUrl = "urn:uuid:5b7e2f4a-8c1d-4e6f-9a3b-2d4c6e8f0a1b"
+* entry[provenance].resource = cz-example-provenance
+
 Instance: cz-example-composition
 InstanceOf: CZ_CompositionElp
 Title: "Composition: Electronic Medical Report (CZ)"
@@ -58,10 +61,14 @@ Usage: #example
 * custodian = Reference(urn:uuid:70df1d8e-4b6b-45ac-a5bf-719960e948bf)
 * section[medicalExamination].title = "Medical Examination Section"
 * section[medicalExamination].code = $loinc#56446-8
+* section[medicalExamination].text.status = #generated
+* section[medicalExamination].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Medical Examination</p></div>"
 * section[medicalExamination].entry[0] = Reference(urn:uuid:064c136d-0d08-4b8f-bd76-8d79de3ee99e)
 * section[medicalExamination].entry[1] = Reference(urn:uuid:777f4db4-4a50-4f89-8bc6-287a59973807)
 * section[medicalReport].title = "Medical Report Section"
 * section[medicalReport].code =  $loinc#104988-1
+* section[medicalReport].text.status = #generated
+* section[medicalReport].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Medical Report</p></div>"
 * section[medicalReport].entry[0] = Reference(urn:uuid:03b0d597-d68d-4966-9400-7752bb3ee39d)
 
 Instance: cz-example-organization
@@ -196,9 +203,31 @@ Description: "Example of diagnostic report for ELP record."
 
 * id = "03b0d597-d68d-4966-9400-7752bb3ee39d"
 * category.coding = ElpRo100#druh_posudku_ro_4	"senioři"
-* effectiveDateTime = "2025-05-20T12:02:00+01:00"
+* effectivePeriod.start = "2025-05-20T12:02:00+01:00"
+* effectivePeriod.end = "2030-05-20"
 * issued = "2025-05-20T12:02:00+01:00"
 * status = #final
 * code = $loinc#104990-7 "Driver license medical fitness certificate"
+* subject = Reference(urn:uuid:2f4dde8e-ad7d-432d-aa49-e995367bbfc3)
 * conclusionCode = ElpRo100#vysledek_posudku_ro_3	"způsobilý s podmínkou"
 * result = Reference(urn:uuid:9994fdeb-dc0c-43aa-a998-6f02e7b88d32)
+
+Instance: cz-example-provenance
+InstanceOf: CZ_Provenance
+Title: "Provenance: Signature of ELP"
+Usage: #example
+Description: "Example of Provenance carrying the electronic signature of the Electronic Medical Report."
+
+* id = "5b7e2f4a-8c1d-4e6f-9a3b-2d4c6e8f0a1b"
+* text.status = #generated
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Elektronický podpis posudku ELP (Composition urn:uuid:543ea990-357a-4514-94d2-e33202cec664), podepsal posuzující lékař dne 20. 5. 2025.</p></div>"
+* target = Reference(urn:uuid:543ea990-357a-4514-94d2-e33202cec664)
+* recorded = "2025-05-20T12:05:00+01:00"
+* agent[+].type = http://terminology.hl7.org/CodeSystem/provenance-participant-type#author "Author"
+* agent[=].who = Reference(urn:uuid:a9c01336-79c9-4e4f-a5c4-5ae9185cef19)
+* signature[+].type = urn:iso-astm:E1762-95:2013#1.2.840.10065.1.12.1.1 "Author's Signature"
+* signature[=].when = "2025-05-20T12:05:00+01:00"
+* signature[=].who = Reference(urn:uuid:a9c01336-79c9-4e4f-a5c4-5ae9185cef19)
+* signature[=].targetFormat = #application/fhir+json
+* signature[=].sigFormat = #application/jose
+* signature[=].data = "ZXhhbXBsZSBKQWRFUyBzaWduYXR1cmU="

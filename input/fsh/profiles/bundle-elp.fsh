@@ -41,7 +41,8 @@ Description: "Clinical document used to represent a Electronic Medical Report fo
     documentReference 1..* and
     diagnosticReport 1..1 and
     observation 0..* and
-    appointment 0..*
+    appointment 0..* and
+    provenance 0..*
 
 
 * entry[composition].resource only CZ_CompositionElp
@@ -53,7 +54,11 @@ Description: "Clinical document used to represent a Electronic Medical Report fo
 * entry[diagnosticReport].resource only CZ_DiagnosticReportElp
 * entry[appointment].resource only CZ_AppointmentElp
 * entry[observation].resource only CZ_ObservationExaminationElp or CZ_ObservationResultElp
+* entry[provenance].resource only CZ_Provenance
+* entry[provenance] ^short = "Provenance and signatures for resources in the document"
+* entry[provenance] ^definition = "Provenance resources recording the origin and signatures of document resources. Provenance.target identifies the signed resources; the Composition does not reference Provenance through a signature section."
 
+* signature only CZ_Signature
 * signature ^short = "Report Digital Signature"
   * type ^short = "Digital Signature Purposes"
   * when ^short = "When was signed"

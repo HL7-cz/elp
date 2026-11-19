@@ -1,8 +1,709 @@
-<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir../../input-cache/schemas/R5/fhir-single.xsd">
-<!--h3 id="overview">Header Model map</h3>
-<a> </a-->
-<p>Hereafter a browseable diagram showing how the Electronic medical report header model is realized by the HL7 FHIR Profiles of this guide</p>
-<h3 id="model">Model Overview</h3>
-<a> </a>
-<p>{% include elpHead-map.svg %}</p>
+<?xml version="1.0" encoding="UTF-8"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+
+  <style type="text/css">
+
+      .table-wrap {
+        border: 1px solid #c9cdd3;
+        border-radius: 10px;
+        background: #f7f8fa;
+        padding: 10px;
+        margin: 0 0 1rem 0;
+      }
+
+      .table-wrap table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        background: #fff;
+      }
+
+      .table-wrap th,
+      .table-wrap td {
+        border: 1px solid #bfc5cc;
+        padding: 6px 8px;
+        vertical-align: top;
+        word-wrap: break-word;
+      }
+
+      .table-wrap caption {
+        text-align: left;
+        font-weight: bold;
+        margin: 0 0 6px 0;
+      }
+
+      .src-head { background: #2f63b7; color: #fff; }
+      .relhead { background: #7b389f; color: #fff; }
+      .tgt-head { background: #cf003e; color: #fff; }
+
+      .src-sub { background: #97abd7; }
+      .relsub { background: #c9bed1; }
+      .tgt-sub { background: #cf8398; }
+
+    </style>
+
+
+    <!-- The page title is supplied by sushi-config.yaml. -->
+
+    <p>
+      This page explains how conceptual elements from the Header logical model are expressed in the corresponding FHIR profiles used by this Implementation Guide.
+    </p>
+
+    <h3>Model Overview</h3>
+
+    <p>{% include elpHead-map.svg %}</p>
+
+    <div class="table-wrap">
+
+      <strong>Mapping Context</strong>
+
+      <ul>
+        <li><strong>Source logical model:</strong> <a href="StructureDefinition-HeaderElpCz.html">A.1 - Document header</a></li>
+        <li><strong>Source mapping file:</strong> <code>Header2FHIR.fsh</code></li>
+        <li><strong>Mapping scope:</strong> A.1 Document header of the Electronic Medical Report</li>
+      </ul>
+
+    </div>
+
+    <div class="table-wrap">
+
+      <table summary="Header -&gt; FHIR Profiles (CZ ELP)">
+
+        <caption>Header -&gt; FHIR Profiles (CZ ELP)</caption>
+
+        <thead>
+
+          <tr>
+            <th colspan="2" class="src-head">Header (Logical Model)</th>
+            <th class="relhead">Relationship</th>
+            <th colspan="4" class="tgt-head">FHIR Target</th>
+          </tr>
+
+          <tr>
+            <th class="src-sub">Element</th>
+            <th class="src-sub">Description</th>
+            <th class="relsub">Relationship</th>
+            <th class="tgt-sub">Resource/Profile</th>
+            <th class="tgt-sub">Element</th>
+            <th class="tgt-sub">Reference</th>
+            <th class="tgt-sub">Notes</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><a href="StructureDefinition-HeaderElpCz.html">Header.patient</a></td>
+            <td>
+            A.1.1 - Patient - Patient information.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-patient-core.html">Patient (CZ core)</a></td>
+            <td>
+            
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).subject
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-HeaderElpCz.html">Header.patient.rid</a></td>
+            <td>
+            A.1.1.1 - RID - Patient&#x27;s National Health Sector Identifier.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-patient-core.html">Patient (CZ core)</a></td>
+            <td>
+            identifier:RID
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).subject
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-HeaderElpCz.html">Header.patient.name</a></td>
+            <td>
+            A.1.1.2 - Name - Name of the patient.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-patient-core.html">Patient (CZ core)</a></td>
+            <td>
+            name.given
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).subject
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-HeaderElpCz.html">Header.patient.lastName</a></td>
+            <td>
+            A.1.1.3 - Last name - Patient&#x27;s last name.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-patient-core.html">Patient (CZ core)</a></td>
+            <td>
+            name.family
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).subject
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-HeaderElpCz.html">Header.patient.dateOfBirth</a></td>
+            <td>
+            A.1.1.4 - Date of birth - Patient&#x27;s date of birth.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-patient-core.html">Patient (CZ core)</a></td>
+            <td>
+            birthDate
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).subject
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-HeaderElpCz.html">Header.patient.address</a></td>
+            <td>
+            A.1.1.5 - Address
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-patient-core.html">Patient (CZ core)</a></td>
+            <td>
+            address
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).subject
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-HeaderElpCz.html">Header.patient.contact</a></td>
+            <td>
+            A.1.1.6 - Contact - Patient contact details (email, telephone).
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-patient-core.html">Patient (CZ core)</a></td>
+            <td>
+            telecom
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).subject
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-HeaderElpCz.html">Header.patient.documentType</a></td>
+            <td>
+            A.1.1.7 - Document type - Type of the patient&#x27;s identity document.
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-patient-core.html">Patient (CZ core)</a></td>
+            <td>
+            identifier
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).subject
+            </td>
+            <td>
+            The document type is expressed by the identifier slice used (e.g. identifier:OP for the national ID card, identifier:PAS for the passport).
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-HeaderElpCz.html">Header.patient.documentNumber</a></td>
+            <td>
+            A.1.1.8 - Document Number - The number of the patient&#x27;s identity document.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-patient-core.html">Patient (CZ core)</a></td>
+            <td>
+            identifier.value
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).subject
+            </td>
+            <td>
+            Value of the identifier slice corresponding to the document type (identifier:OP or identifier:PAS).
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-HeaderElpCz.html">Header.assessingPhysician</a></td>
+            <td>
+            A.1.2 - Assessing Physician - Information about the assessing physician.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-practitionerrole-core.html">PractitionerRole (CZ core)</a></td>
+            <td>
+            
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).author
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-HeaderElpCz.html">Header.assessingPhysician.id</a></td>
+            <td>
+            A.1.2.1 - ID - Identification number of the healthcare professional.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-practitioner-core.html">Practitioner (CZ core)</a></td>
+            <td>
+            identifier
+            </td>
+            <td>
+            PractitionerRole (CZ_PractitionerRoleCore).practitioner
+            </td>
+            <td>
+            Preferably the national identifier of the healthcare professional (identifier:KRZP).
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-HeaderElpCz.html">Header.assessingPhysician.firstName</a></td>
+            <td>
+            A.1.2.2 - First name - First name of the assessing physician.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-practitioner-core.html">Practitioner (CZ core)</a></td>
+            <td>
+            name.given
+            </td>
+            <td>
+            PractitionerRole (CZ_PractitionerRoleCore).practitioner
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-HeaderElpCz.html">Header.assessingPhysician.lastName</a></td>
+            <td>
+            A.1.2.3 - Last name - Last name of the assessing physician.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-practitioner-core.html">Practitioner (CZ core)</a></td>
+            <td>
+            name.family
+            </td>
+            <td>
+            PractitionerRole (CZ_PractitionerRoleCore).practitioner
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-HeaderElpCz.html">Header.assessingPhysician.specialty</a></td>
+            <td>
+            A.1.2.4 - Specialty - Specialty of the assessing physician.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-practitionerrole-core.html">PractitionerRole (CZ core)</a></td>
+            <td>
+            specialty
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).author
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-HeaderElpCz.html">Header.assessingPhysician.providerID</a></td>
+            <td>
+            A.1.2.5 - Provider ID - Identification number of the healthcare provider where the assessing physician is employed.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-organization-core.html">Organization (CZ core)</a></td>
+            <td>
+            identifier
+            </td>
+            <td>
+            PractitionerRole (CZ_PractitionerRoleCore).organization
+            </td>
+            <td>
+            Preferably the national healthcare provider ID (identifier:ICZ).
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-HeaderElpCz.html">Header.assessingPhysician.providerName</a></td>
+            <td>
+            A.1.2.6 - Provider name - Name of the healthcare provider where the assessing physician is employed.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-organization-core.html">Organization (CZ core)</a></td>
+            <td>
+            name
+            </td>
+            <td>
+            PractitionerRole (CZ_PractitionerRoleCore).organization
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-HeaderElpCz.html">Header.assessingPhysician.providerAddress</a></td>
+            <td>
+            A.1.2.7 - Provider Address - Address of the healthcare provider where the assessing physician is employed.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-organization-core.html">Organization (CZ core)</a></td>
+            <td>
+            address
+            </td>
+            <td>
+            PractitionerRole (CZ_PractitionerRoleCore).organization
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-HeaderElpCz.html">Header.metadata</a></td>
+            <td>
+            A.1.3 - Metadata - Metadata of the document.
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="StructureDefinition-cz-composition-elp.html">Composition (ELP CZ)</a></td>
+            <td>
+            
+            </td>
+            <td>
+            Bundle (CZ_BundleElp).entry:composition
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-HeaderElpCz.html">Header.metadata.id</a></td>
+            <td>
+            A.1.3.1 - ID - Unique identifier of the medical assessment.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-composition-elp.html">Composition (ELP CZ)</a></td>
+            <td>
+            identifier
+            </td>
+            <td>
+            Composition (CZ_CompositionElp)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-HeaderElpCz.html">Header.metadata.id</a></td>
+            <td>
+            A.1.3.1 - ID - Unique identifier of the medical assessment.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-bundle-elp.html">Bundle (ELP CZ)</a></td>
+            <td>
+            identifier
+            </td>
+            <td>
+            Bundle (CZ_BundleElp)
+            </td>
+            <td>
+            Identifier of the document instance (Bundle).
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-HeaderElpCz.html">Header.metadata.category</a></td>
+            <td>
+            A.1.3.2 - Category - Category of the electronic health record (EHR).
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-composition-elp.html">Composition (ELP CZ)</a></td>
+            <td>
+            type
+            </td>
+            <td>
+            Composition (CZ_CompositionElp)
+            </td>
+            <td>
+            Fixed to LOINC 104990-7 Driver license medical fitness certificate.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-HeaderElpCz.html">Header.metadata.status</a></td>
+            <td>
+            A.1.3.3 - Status - Status of the document.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-composition-elp.html">Composition (ELP CZ)</a></td>
+            <td>
+            status
+            </td>
+            <td>
+            Composition (CZ_CompositionElp)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-HeaderElpCz.html">Header.metadata.creationDate</a></td>
+            <td>
+            A.1.3.4 - Creation date - Date and time of creation of the medical report.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-composition-elp.html">Composition (ELP CZ)</a></td>
+            <td>
+            date
+            </td>
+            <td>
+            Composition (CZ_CompositionElp)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-HeaderElpCz.html">Header.metadata.creationDate</a></td>
+            <td>
+            A.1.3.4 - Creation date - Date and time of creation of the medical report.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-bundle-elp.html">Bundle (ELP CZ)</a></td>
+            <td>
+            timestamp
+            </td>
+            <td>
+            Bundle (CZ_BundleElp)
+            </td>
+            <td>
+            When the document instance (Bundle) was assembled.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-HeaderElpCz.html">Header.metadata.filename</a></td>
+            <td>
+            A.1.3.5 - Filename - Filename of the medical report.
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="StructureDefinition-cz-composition-elp.html">Composition (ELP CZ)</a></td>
+            <td>
+            title
+            </td>
+            <td>
+            Composition (CZ_CompositionElp)
+            </td>
+            <td>
+            Human-readable title of the document.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-HeaderElpCz.html">Header.metadata.documentManager</a></td>
+            <td>
+            A.1.3.6 - Document Manager - Manager of the medical report.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-organization-core.html">Organization (CZ core)</a></td>
+            <td>
+            
+            </td>
+            <td>
+            Composition (CZ_CompositionElp).custodian
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-HeaderElpCz.html">Header.metadata.confidentiality</a></td>
+            <td>
+            A.1.3.7 - Confidentiality - Confidentiality level of the medical report.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-composition-elp.html">Composition (ELP CZ)</a></td>
+            <td>
+            confidentiality
+            </td>
+            <td>
+            Composition (CZ_CompositionElp)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-HeaderElpCz.html">Header.metadata.language</a></td>
+            <td>
+            A.1.3.8 - Language - The language in which the medical report is written.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-composition-elp.html">Composition (ELP CZ)</a></td>
+            <td>
+            language
+            </td>
+            <td>
+            Composition (CZ_CompositionElp)
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-HeaderElpCz.html">Header.metadata.version</a></td>
+            <td>
+            A.1.3.9 - Version - The version of the medical report.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="StructureDefinition-cz-composition-elp.html">Composition (ELP CZ)</a></td>
+            <td>
+            extension:version.valueString
+            </td>
+            <td>
+            Composition (CZ_CompositionElp)
+            </td>
+            <td>
+            As business version, not as resource version.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-HeaderElpCz.html">Header.metadata.electronicSignature</a></td>
+            <td>
+            A.1.3.10 - Electronic signature - Electronic signature or seal of the document.
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-provenance.html">Provenance (CZ core)</a></td>
+            <td>
+            
+            </td>
+            <td>
+            Bundle (CZ_BundleElp).entry:provenance
+            </td>
+            <td>
+            Signatures are recorded in Provenance resources included in the document Bundle; Provenance.target identifies the signed resources.
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-HeaderElpCz.html">Header.metadata.electronicSignature</a></td>
+            <td>
+            A.1.3.10 - Electronic signature - Electronic signature or seal of the document.
+            </td>
+            <td>
+            equivalent
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-provenance.html">Provenance (CZ core)</a></td>
+            <td>
+            signature.data
+            </td>
+            <td>
+            Provenance (CZ_Provenance).signature
+            </td>
+            <td>
+            
+            </td>
+          </tr>
+          <tr>
+            <td><a href="StructureDefinition-HeaderElpCz.html">Header.metadata.timestamp</a></td>
+            <td>
+            A.1.3.11 - Timestamp - Electronic timestamp.
+            </td>
+            <td>
+            related-to
+            </td>
+            <td><a href="https://build.fhir.org/ig/HL7-cz/cz-core/StructureDefinition-cz-provenance.html">Provenance (CZ core)</a></td>
+            <td>
+            
+            </td>
+            <td>
+            Provenance (CZ_Provenance).signature
+            </td>
+            <td>
+            No separate FHIR element. The timestamp is part of the JAdES structure in Provenance.signature.data (A.1.3.10); signature.when is not a timestamp (see the EHR Electronic Signing standard).
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+
+    </div>
+
 </div>

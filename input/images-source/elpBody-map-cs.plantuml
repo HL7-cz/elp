@@ -14,19 +14,10 @@ legend right
 endlegend
 
 class "ELP - Lékařská prohlídka" <<LogicalModel>> [[StructureDefinition-LogMedicalExaminationCz.html]]
-note top #EEEEAE [[ConceptMap-MedicalExamination2FHIR-cz.html]]
-Concept Mapa
-endnote
 
 class "ELP - Výsledek posudku" <<LogicalModel>> [[StructureDefinition-LogResultCz.html]]
-note top #EEEEAE [[ConceptMap-Result2FHIR-cz.html]]
-Concept Mapa
-endnote
 
 class "ELP - Lékařský posudek" <<LogicalModel>> [[StructureDefinition-LogMedicalReportCz.html]]
-note top #EEEEAE [[ConceptMap-MedicalReport2FHIR-cz.html]]
-Concept Mapa
-endnote
 
 class "cz-composition-elp" <<Profile>> [[StructureDefinition-cz-composition-elp.html]]
 class "cz-appointment-elp" <<Profile>> [[StructureDefinition-cz-appointment-elp.html]]

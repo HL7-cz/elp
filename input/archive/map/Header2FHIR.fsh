@@ -109,14 +109,24 @@ Usage: #definition
 * group[=].element[=].target.equivalence = #equivalent					
 * group[=].element[+].code = #Header.metadata.electronicSignature
 * group[=].element[=].display = "A.1.3.10 - Digital signature"
-* group[=].element[=].target.code = #Bundle.signature.data
+* group[=].element[=].target.code = #Bundle.entry:provenance
+* group[=].element[=].target.display = ""
+* group[=].element[=].target.equivalence = #relatedto
+* group[=].element[=].target.comment = "Signatures are recorded in Provenance resources included in the document Bundle; Provenance.target identifies the signed resources."
+* group[+].source = "https://hl7.cz/fhir/elp/StructureDefinition/HeaderElpCz"
+* group[=].target = "https://hl7.cz/fhir/core/StructureDefinition/cz-provenance"
+* group[=].element[+].code = #Header.metadata.electronicSignature
+* group[=].element[=].display = "A.1.3.10 - Digital signature"
+* group[=].element[=].target.code = #Provenance.signature.data
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent
-* group[=].element[=].target.comment = "Digital signature of the Bundle"	
+* group[=].element[=].target.comment = "Electronic signature or seal of the document (JAdES)."
 * group[=].element[+].code = #Header.metadata.timestamp
 * group[=].element[=].display = "A.1.3.11 - Timestamp"
-* group[=].element[=].target.code = #Bundle.signature.when
-* group[=].element[=].target.equivalence = #equivalent
+* group[=].element[=].target.code = #Provenance.signature
+* group[=].element[=].target.display = ""
+* group[=].element[=].target.equivalence = #relatedto
+* group[=].element[=].target.comment = "No separate FHIR element. The timestamp is part of the JAdES structure in Provenance.signature.data (A.1.3.10); signature.when is not a timestamp (see the EHR Electronic Signing standard)."
 * group[+].source = "https://hl7.cz/fhir/elp/StructureDefinition/HeaderElpCz"
 * group[=].target = "https://hl7.cz/fhir/elp/StructureDefinition/cz-composition-elp"
 * group[=].element[+].code = #Header.patient
@@ -177,7 +187,7 @@ Usage: #definition
 * group[=].element[=].target.equivalence = #relatedto					
 * group[=].element[+].code = #Header.documentMetadata.version
 * group[=].element[=].display = "A.1.3.9 - Version"
-* group[=].element[=].target.code = #Composition.extension:versionNumber.valueString					
+* group[=].element[=].target.code = #Composition.extension:version.valueString					
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent					
 * group[=].element[=].target.comment = "As business version, not as resource version"
